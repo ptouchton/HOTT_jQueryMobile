@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<entries>
+  <entry CD="Abbey Road" artist="The Beatles">
+    <label>Capitol</label>
+    <release>1969</release>
+  </entry>
+  <entry CD="Bitches Brew" artist="Miles Davis">
+    <label>Sony</label>
+    <release>1969</release>
+  </entry>
+  <entry CD="Stand!" artist="Sly &amp; the Family Stone">
+    <label>Epic</label>
+    <release>1969</release>
+  </entry>
+  <entry CD="The Band" artist="The Band">
+    <label>Capitol</label>
+    <release>1969</release>
+  </entry>
+  <entry CD="At Folsom Prison" artist="Johnny Cash">
+    <label>Sony</label>
+    <release>1968</release>
+  </entry>
+  <entry CD="Lady Soul" artist="Aretha Franklin">
+    <label>Atlantic</label>
+    <release>1968</release>
+  </entry>
+  <entry CD="The Beatles (&quot;The White Album&quot;)" artist="The Beatles">
+    <label>Capitol</label>
+    <release>1968</release>
+  </entry>
+  <entry CD="Are You Experienced" artist="The Jimi Hendrix Experience">
+    <label>Experience Hendrix</label>
+    <release>1967</release>
+  </entry>
+  <entry CD="Sgt. Pepper's Lonely Hearts Club Band" artist="The Beatles">
+    <label>Capitol</label>
+    <release>1967</release>
+  </entry>
+  <entry CD="The Velvet Underground and Nico" artist="The Velvet Underground">
+    <label>Polydor/Pgd</label>
+    <release>1967</release>
+  </entry>
+  <entry CD="Pet Sounds" artist="The Beach Boys">
+    <label>DCC</label>
+    <release>1966</release>
+  </entry>
+  <entry CD="Revolver" artist="The Beatles">
+    <label>Capitol</label>
+    <release>1966</release>
+  </entry>
+  <entry CD="Highway 61 Revisited" artist="Bob Dylan">
+    <label>Columbia</label>
+    <release>1965</release>
+  </entry>
+  <entry CD="Otis Blue" artist="Otis Redding">
+    <label>Atlantic</label>
+    <release>1965</release>
+  </entry>
+  <entry CD="Rubber Soul" artist="The Beatles">
+    <label>Capitol</label>
+    <release>1965</release>
+  </entry>
+  <entry CD="Live at the Apollo (1963)" artist="James Brown">
+    <label>Polydor</label>
+    <release>1963</release>
+  </entry>
+</entries>

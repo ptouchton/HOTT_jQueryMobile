@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Footer Demo - Form in Footer</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="css/jquery.mobile-1.4.4.min.css" />
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/jquery.mobile-1.4.4.min.js"></script>
+</head>
+<body>
+
+<div data-role="page">
+
+	<div data-role="header">
+		<h1>Footer Demo</h1>
+	</div>
+	<div role="main" class="ui-content">
+		<p>Page content goes here.</p>
+	</div><!-- /content -->
+
+	<div data-role="footer" class="ui-bar" data-theme="b">
+  <div class="ui-grid-a">
+  <div class="ui-block-a" style="text-align:left;">
+  	  <label for="ddlRating" 
+     class="ui-hidden-accessible">Rating:</label>
+    <select name="ddlRating" id="ddlRating" 
+     data-mini="true" data-inline="true">
+        <option value="SA">Strongly Agree</option>
+        <option value="A">Agree</option>
+        <option value="N">Neutral</option>
+        <option value="D"> Agree</option>
+        <option value="SD">Strongly Disagree</option>
+    </select>
+  
+  </div>
+  <div class="ui-block-b" style="text-align:right;">
+  	<a href="#" class="ui-btn ui-corner-all ui-shadow ui-mini ui-btn-inline ui-icon-home ui-btn-icon-notext">Home</a>
+  	<a href="#" class="ui-btn ui-corner-all ui-shadow ui-mini ui-btn-inline ui-icon-info ui-btn-icon-notext">Info</a>
+  	<a href="#" class="ui-btn ui-corner-all ui-shadow ui-mini ui-btn-inline ui-icon-gear ui-btn-icon-notext">Options</a>
+  </div>
+  </div>
+  
+
+	</div><!-- /footer -->
+</div><!-- /page -->
+
+</body>
+</html>

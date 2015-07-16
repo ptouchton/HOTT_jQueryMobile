@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Creating Collapsibles</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="css/jquery.mobile-1.4.4.min.css" />
+	<script src="js/jquery-1.9.1.min.js"></script>
+
+	<script>
+	$( document ).on('pagecreate', function(){
+  var nextId = 0;
+  $('#btnAdd').click(function() {
+    nextId++;
+    var content = '<div data-role="collapsible" id="set' + nextId + '"><h3>Section ' + nextId + 
+     '</h3><p>Collapsible content.</p></div>';
+    $('#cSet').append(content).collapsibleset('refresh');
+  });
+  $('#btnExpand').click(function(){
+    $('#cSet').children(':last').collapsible('expand');
+  });
+  $('#btnCollapse').click(function() {
+    $('#cSet').children(':last').collapsible('collapse');
+  });
+});
+
+	</script>
+	<script src="js/jquery.mobile-1.4.4.min.js"></script>
+</head>
+<body>
+
+<div data-role="page">
+
+	<div data-role="header">
+		<h1>Creating a Collapsible Dynamically</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+<button type="button" data-icon="plus" data-iconpos="right" data-mini="true" data-inline="true" id="btnAdd">Add</button>
+<button type="button" data-icon="arrow-d" data-iconpos="right" data-mini="true" data-inline="true" id="btnExpand">Expand last</button>
+<button type="button" data-icon="arrow-u" data-iconpos="right" data-mini="true" data-inline="true" id="btnCollapse">Collapse last</button>
+<div data-role="collapsibleset" data-content-theme="a" data-iconpos="right" id="cSet">
+   
+</div>	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Copyright &copy;2014 HOTT, Inc.</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+</body>
+</html>

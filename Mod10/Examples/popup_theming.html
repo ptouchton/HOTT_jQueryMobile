@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Popup Demo - Popup Theming</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="css/jquery.mobile-1.4.4.min.css" />
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/jquery.mobile-1.4.4.min.js"></script>
+
+
+</head>
+<body>
+
+<div data-role="page">
+
+	<div data-role="header">
+		<h1>Popup Demo - Popup Theming</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+
+		<a href="#themeA" data-rel="popup" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-position-to="window">Theme A</a>
+		<div id="themeA" data-role="popup" data-theme="a" class="ui-content">
+  			<p>Popup with default theme ("A")</p>
+		</div>
+		<a href="#themeB" data-rel="popup" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-position-to="window">Theme B</a>
+		<div id="themeB" data-role="popup" data-theme="b" class="ui-content">
+  			<p>Popup with different theme ("B")</p>
+		</div>
+		<a href="#overlayA" data-rel="popup" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-position-to="window">Overlay theme A</a>
+		<div id="overlayA" data-role="popup" data-overlay-theme="a" class="ui-content">
+			<p>Overlay with theme "A"</p>
+		</div>
+
+		<a href="#bothThemes" data-rel="popup" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-position-to="window">Theme A + overlay B</a>
+		<div id="bothThemes" data-role="popup" data-overlay-theme="b" data-theme="a" class="ui-content">
+			<p>Popup with theme "A", overlay with theme "B"</p>
+		</div>
+		
+		<a href="#transPopupNS" data-rel="popup" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-position-to="window">No theme or shadow</a>
+		<div id="transPopupNS" data-role="popup" data-theme="none" data-shadow="false">
+	    	<a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+	  		<img src="../../../../images/hott-logo.png" class="popphoto" alt="HOTT logo on a transparent popup" height="54" width="250">
+		</div>
+
+		<a href="#transPopup" data-rel="popup" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-position-to="window">No theme, with shadow</a>
+		<div id="transPopup" data-role="popup" data-theme="none" data-shadow="true">
+	    	<a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+	  		<img src="../../../../images/hott-logo.png" class="popphoto" alt="HOTT logo on a transparent popup" height="54" width="250">
+		</div>
+
+
+
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Copyright &copy;2014 HOTT, Inc.</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+
+</body>
+</html>

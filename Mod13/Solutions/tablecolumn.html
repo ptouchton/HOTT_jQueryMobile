@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Column Toggle Table</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/jquery.mobile-1.4.4.min.css" />
+	<link href="css/tablecolumn.css" rel="stylesheet" />
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/jquery.mobile-1.4.4.min.js"></script>
+</head>
+<body>
+
+<div data-role="page">
+
+	<div data-role="header">
+		<h1>Animals of New England</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+<table data-role="table" id="animal-table" data-mode="columntoggle" data-column-btn-text="Compare..." data-column-btn-theme="a" class="animal-compare ui-shadow table-stroke">
+    <thead>
+      <tr>
+        <th class="label">Common Name</th>
+        <th> <h4>Eastern Gray Squirrel</h4>
+        </th>
+        <th data-priority="1"><h4>Great Northern Loon</h4>
+        </th>
+        <th data-priority="2"><h4>Black Bear</h4>
+        </th>
+        <th data-priority="3"><h4>Moose</h4>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="photos">
+        <th class="label">Photo</th>
+        <td><a href="#img-squirrel" data-rel="popup" data-position-to="window"><img src="images/squirrel_thm.jpg" /></a></td>
+        <td><a href="#img-loon" data-rel="popup" data-position-to="window"><img src="images/loon_thm.jpg" /></a></td>
+        <td><a href="#img-blackbear" data-rel="popup" data-position-to="window"><img src="images/blackbear_thm.jpg" /></a></td>
+        <td><a href="#img-moose" data-rel="popup" data-position-to="window"><img src="images/moose_thm.jpg" /></a></td>
+      </tr>
+      <tr>
+        <th class="label">Species Name</th>
+        <td>Sciurus carolinensis</td>
+        <td>Gavia immer</td>
+        <td>Ursus americanus </td>
+        <td>Alces americanus</td>
+      </tr>
+      <tr>
+        <th class="label">Diet</th>
+        <td>bark, buds, berries, seeds, acorns</td>
+        <td>Fish</td>
+        <td>fruits, berries, buds, shoots, nuts</td>
+        <td>shoots, plants, bark</td>
+      </tr>
+      <tr>
+        <th class="label">Size</th>
+        <td>Head - 9.1 to 11.8 in <br>
+          Tail - 7.5 to 9.8 in<br></td>
+        <td>24 to 39 in</td>
+        <td>Head and Body - 47 to 79 in)<br>
+          Shoulder Height - 28 to 41 in</td>
+        <td>4.6–6.9 ft</td>
+      </tr>
+      <tr>
+        <th class="label">Weight (lbs.)</th>
+        <td>14 to 21 oz</td>
+        <td>3.5 to 17.6</td>
+        <td>Adult males - 126–551 lb<br>
+          Adult females - 90–375 lb</td>
+        <td>Males - 840–1,540 lb<br>
+          Females - 440–790 lb</td>
+      </tr>
+    </tbody>
+  </table>
+<div id="img-squirrel" data-role="popup" data-overlay-theme="a"> <img src="images/squirrel.jpg" /> </div>
+  <div id="img-loon" data-role="popup" data-overlay-theme="a"> <img src="images/loon.jpg" /> </div>
+  <div id="img-blackbear" data-role="popup" data-overlay-theme="a"> <img src="images/blackbear.jpg" /> </div>
+  <div id="img-moose" data-role="popup" data-overlay-theme="a"> <img src="images/moose.jpg" /> </div>
+
+
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Copyright &copy;2014 HOTT, Inc.</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+</body>
+</html>

@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Creating Dynamic Panels</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+	<link rel="stylesheet" href="css/jquery.mobile-1.4.4.min.css" />
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script>
+		var weatherloaded = false;
+		var weathericonurl = "http://openweathermap.org/img/w/";
+
+		$(document).on("panelbeforeopen", "#weatherpanel", getWeather);
+		
+		$(document).ready(function(){
+			$('#btnSearch').on('click',getWeather);
+		
+		});
+    
+
+function convertToFarenheit(cel){
+	return cel * (9/5) + 32;
+}
+function getWeather(){
+	var panel = $('#weatherpanel');
+    var citystate = $.trim($('#txtCityState').val());
+    if(citystate==='')
+    {
+    	citystate='Boston, MA';
+    }
+		    //Do we have our weather data?
+		    if(!weatherloaded) {
+    
+		        $("p.weather", panel).html("<i>Fetching weather - please stand by!</i>");
+	
+		   
+				}
+	
+	var URL = "http://api.openweathermap.org/data/2.5/weather?q=" + citystate + "&callback=test";
+	
+    $.get(URL, function(res) {
+        var s = "";
+        var tempC = Math.round(res.main.temp - 273.15);
+        var minC, maxC;
+        minC = Math.round(res.main.temp_min - 273.15);
+        maxC = Math.round(res.main.temp_max - 273.15);
+        
+    
+        
+        var tempF = Math.round(convertToFarenheit(tempC));
+        var minF = Math.round(convertToFarenheit(minC));
+        var maxF =Math.round(convertToFarenheit(maxC));
+        
+        s += "<p>Current temp: "+ tempF + "</p>";
+        s += "<p>Today's low: " + minF + "</p>";
+        s += "<p>Today's high: " + maxF + "</p>";
+
+        //display graphic
+        if(res.weather && res.weather.length >= 1) {
+            s += "<p><img style='width:100px' src='" + weathericonurl + res.weather[0].icon + ".png'></p>";
+        }
+
+        $("p.weather", panel).html(s);
+        $('#citystateheader').html('<br>' + citystate);
+        $(panel).trigger( "updatelayout" );            
+        weatherloaded = true;
+    
+    }, "JSONP");
+        
+
+
+
+}
+	</script>
+	<script src="js/jquery.mobile-1.4.4.min.js"></script>
+</head>
+<body>
+
+<div data-role="page">
+
+	<div data-role="header">
+		<a href="#weatherpanel" data-icon="location" data-iconpos="notext">Weather</a>
+        <h1>Creating Dynamic Panels</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<p>Click the button on the left to retrieve the current temperature for a city, state (for example, Las Vegas, NV) or city, country (London, UK).</p>
+		<p>This example is using the free 
+		<a href="http://openweathermap.org">OpenWeatherMap</a> 
+		web service.&nbsp;&nbsp;The service exposes an API that provides weather data and 
+		forecast information.&nbsp;&nbsp;In this example, we are accessing the current 
+		temperature and the day's min/max temperatures.&nbsp;&nbsp;In addition, the 
+		service returns an image depicting what the current weather is like.</p>
+		<p>The service returns the data as JSON data and then the properties of the JSON object are retrieved and converted to Celsius and Farenheit temperatures.</p>	
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Copyright &copy;2014 HOTT, Inc.</h4>
+	</div><!-- /footer -->
+
+	<div data-role="panel" id="weatherpanel" data-theme="a" data-dismissable="false" data-swipe-close="false">
+        <h3>Current Weather for <span id="citystateheader"></span></h3>
+        
+        <p class="weather" id="results">
+        </p>
+        <form>
+        	<label for="txtCityState">Enter City, State</label><input type="text" id="txtCityState" placeholder="City, State"><br>
+        	<a class="ui-btn ui-corner-all ui-shadow ui-btn-inline" id="btnSearch" data-theme="b">Search Again</a>
+        </form>
+        <p>        
+        <a data-rel="close" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-theme="b">Dismiss</a>
+        </p>
+    </div>
+
+
+</div><!-- /page -->
+
+</body>
+</html>
+

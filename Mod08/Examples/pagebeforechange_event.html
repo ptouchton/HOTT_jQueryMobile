@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>pagebeforechange Event</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="css/jquery.mobile-1.4.4.min.css" />
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script>
+	$(document).ready(function(){
+		$('body').on( 'pagebeforechange', function( e, data ) {
+			if ( typeof data.toPage === "string" ) {
+				var parsedUrl = $.mobile.path.parseUrl( data.toPage );
+				switch ( parsedUrl.hash ) {
+					case "#members":
+						alert('Unauthorized Access!');
+						e.preventDefault();
+						break;
+					case "#aboutus":
+						data.toPage = "about_us.html";
+						data.options.transition = "flip";
+						break;
+					case "#roomList":
+					
+						var rooms = $('#rooms');
+						rooms.empty();
+						rooms.append('<li>Luxury Room</li>');
+						rooms.append('<li>Mid-level Room</li>');
+						rooms.append('<li>Standard Room</li>');
+						$('#roomList').page();
+						rooms.listview('refresh');
+						break;
+				}
+			}
+		});
+		$('body').on('pagecontainerchangefailed', function(e, data){
+			console.log('page change failed - ' + data.toPage);
+		});
+	});
+	</script>
+	<script src="js/jquery.mobile-1.4.4.min.js"></script>
+</head>
+<body>
+
+	<div data-role="page" id="main">
+
+		<div data-role="header">
+			<h1>Welcome to Bear Mountain Bed and Breakfast</h1>
+		</div><!-- /header -->
+
+		<div role="main" class="ui-content">			
+			<a href="#roomList" class="ui-btn">Rooms</a>
+			<a href="#aboutus" class="ui-btn">About Us</a>
+			<a href="#members" class="ui-btn">Members</a>			
+		</div><!-- /content -->
+
+		<div data-role="footer">
+			<h4>Copyright &copy;2014 HOTT, Inc.</h4>
+		</div><!-- /footer -->
+	</div><!-- /page -->
+	<div data-role="page" id="roomList">
+		<div data-role="header" data-back-btn="true">
+			<h1>Room Types</h1>
+		</div>
+		<div role="main" class="ui-content">
+			<ul data-role="listview" id="rooms">
+			</ul>
+		</div>
+		<div data-role="footer">
+			<h4>Copyright &copy;2014 HOTT, Inc.</h4>
+		</div><!-- /footer -->
+	</div>
+	
+</body>
+</html>

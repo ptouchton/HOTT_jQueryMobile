@@ -1,0 +1,9 @@
+<div id="#squirrel" class="ui-content">
+	<h3>Eastern Gray Squirrel</h3>
+	<p><img src="images/squirrel.png" width="200" height="150" alt="Squirrel">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi auctor luctus molestie. Cras ante diam, auctor sit amet facilisis sit amet, consequat in massa. Maecenas libero leo, placerat ut nisl ut, blandit adipiscing lacus. Sed aliquam rutrum urna, ut commodo sapien semper commodo. Aenean posuere, diam sit amet pretium suscipit, ante urna vulputate tortor, in lobortis libero turpis a sapien. </p>
+	<ul>
+		<li><span class="label"><strong>Species Name</strong></span><strong>: </strong>Sciurus carolinensis</li>
+		<li><strong>Diet:</strong> bark, buds, berries, seeds, acorns</li>
+		<li><strong>Weight: </strong>14 to 21 oz</li>
+	</ul>
+</div>

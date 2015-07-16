@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Popup Demo - Lightbox</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="css/jquery.mobile-1.4.4.min.css" />
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/jquery.mobile-1.4.4.min.js"></script>
+
+
+</head>
+<body>
+
+<div data-role="page">
+
+	<div data-role="header">
+		<h1>Popup Demo - Lightbox</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+
+<a href="#popupMoose" data-rel="popup" data-position-to="window" data-transition="fade">
+		<img class="popphoto" src="images/moose-lowres.jpg" alt="Photo of Moose" style="width:30%;"></a>
+
+<div data-role="popup" id="popupMoose" data-overlay-theme="b" data-theme="b" data-corners="false">
+    <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a><img class="popphoto" src="images/moose-lowres.jpg" style="max-height:512px;" alt="Photo of Moose">
+</div>
+
+		
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Copyright &copy;2014 HOTT, Inc.</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+
+</body>
+</html>

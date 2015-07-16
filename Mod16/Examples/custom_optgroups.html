@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Custom Select Menu</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="css/jquery.mobile-1.4.4.min.css" />
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/jquery.mobile-1.4.4.min.js"></script>
+</head>
+<body>
+
+<div data-role="page">
+
+	<div data-role="header">
+		<h1>Custom Select Menu</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<form>
+		<div class="ui-field-contain">
+  			<label for="select-shipOptions" class="select">Preferred delivery:</label>
+  			<select name="select-shipOptions" id="select-shipOptions" data-native-menu="false">
+  			  	<optgroup label="FedEx">
+  			    	<option value="FedEx_nxt">Next Day</option>
+  			    	<option value="FedEx_exp">Express</option>
+  			    	<option value="FedEx_std">Standard</option>
+  				</optgroup>
+    			<optgroup label="UPS">
+  			    	<option value="UPS_nxt">Next Day</option>
+  			    	<option value="UPS_exp">Express</option>
+  			    	<option value="UPS_std">Standard</option>
+    			</optgroup>
+    			<optgroup label="Standard Mail">
+  			    	<option value="USPS_nxt">Next Day</option>
+  			    	<option value="USPS_exp">Express</option>
+  			    	<option value="USPS_std">Standard</option>
+    			</optgroup>
+  			</select>
+  		</div>
+
+		</form>
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Copyright &copy;2014 HOTT, Inc.</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+
+</body>
+</html>

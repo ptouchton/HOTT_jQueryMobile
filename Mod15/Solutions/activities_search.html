@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Page Title</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="css/jquery.mobile-1.4.4.min.css" />
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/jquery.mobile-1.4.4.min.js"></script>
+</head>
+<body>
+
+<div data-role="page">
+
+	<div data-role="header">
+		<h1>Search for Activities</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+	<form class="ui-filterable">
+    <input type="search" id="txtActivitySearch">
+	</form>
+    <div data-role="collapsibleset"   data-inset="true" id="collapsiblesetForFilter" data-children="> div, > div div ul li" data-filter="true" data-input="#txtActivitySearch">
+        <div data-role="collapsible" data-filtertext="historic tours revolution colonial">
+            <h3>Connecticut</h3>
+            <ul data-role="listview" data-inset="false">
+                <li>Casinos</li>
+                <li data-filtertext="historic tours revolution colonial">Historic Tours</li>
+                <li>Mystic Seaport</li>
+            </ul>
+        </div>
+
+        <div data-role="collapsible" data-filtertext="ocean beaches water Old Orchard York skiing mountain snow">
+            <h3>Maine</h3>
+            <ul data-role="listview" data-inset="false">
+                <li data-filtertext="ocean beaches water Old Orchard York">Beaches</li>
+                <li>Golf</li>
+                <li>Nature walks</li>
+                <li data-filtertext="skiing mountain snow">Skiing</li>
+            </ul>
+        </div>
+        <div data-role="collapsible" data-filtertext="ocean beaches water Cape Cod Salisbury historic tours revolution colonial Freedom Trail Boston Concord Lexington">
+            <h3>Massachusetts</h3>
+            <ul data-role="listview" data-inset="false">
+                <li data-filtertext="ocean beaches water Cape Cod Salisbury">Beaches</li>
+                <li>Golf</li>
+                <li data-filtertext="historic tours revolution colonial Freedom Trail Boston Concord Lexington">Historic Tours</li>
+                <li>Ziplining</li>
+            </ul>
+        </div>
+        <div data-role="collapsible" data-filtertext="ocean beaches water Hampton leaves fall foliage skiing mountain snow snowmobiling">
+            <h3>New Hampshire</h3>
+            <ul data-role="listview" data-inset="false">
+                <li data-filtertext="ocean beaches water Hampton">Beaches</li>
+                <li data-filtertext="leaves fall foliage">Fall Foliage</li>
+                <li data-filtertext="skiing mountain snow">Skiing</li>
+                <li data-filtertext="snow snowmobiling">Snowmobiling</li>
+            </ul>
+        </div>
+        <div data-role="collapsible" data-filtertext="ocean beaches water Newport Mansions">
+            <h3>Rhode Island</h3>
+            <ul data-role="listview" data-inset="false">
+                <li data-filtertext="ocean beaches water">Beaches</li>
+                <li data-filtertext="Newport Mansions">Mansions</li>
+            </ul>
+        </div>
+
+		<div data-role="collapsible" data-filtertext="leaves fall foliage skiing mountain snow snowmobiling">
+            <h3>Vermont</h3>
+            <ul data-role="listview" data-inset="false">
+                <li data-filtertext="leaves fall foliage">Fall Foliage</li>
+                <li>Golf</li>
+                <li data-filtertext="skiing mountain snow">Skiing</li>
+                <li data-filtertext="snow snowmobiling">Snowmobiling</li>
+            </ul>
+        </div>
+
+    </div>	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Copyright &copy;2014 HOTT, Inc.</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+
+</body>
+</html>

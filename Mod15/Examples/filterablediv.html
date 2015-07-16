@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Filterable Div</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="css/jquery.mobile-1.4.4.min.css" />
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/jquery.mobile-1.4.4.min.js"></script>
+	
+</head>
+<body>
+
+<div data-role="page">
+
+	<div data-role="header">
+		<h1>British Invasion Bands</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+
+		<form class="ui-filterable">
+		    <input type="search" id="txtFilterParagraphs">
+		</form>
+    
+		<div data-filter="true" data-input="#txtFilterParagraphs">
+			<p data-filtertext="Beatles">The Beatles were an English rock band that formed in Liverpool, in 1960.&nbsp;&nbsp;With John Lennon, Paul McCartney, George Harrison and Ringo Starr, they became widely regarded as the greatest and most influential act of the rock era.</p>
+			<p data-filtertext="Dave Clark Five">The Dave Clark Five (also known as "The DC5") were an English pop rock group.&nbsp;&nbsp;Their single "Glad All Over" knocked the Beatles' "I Want to Hold Your Hand" off the top of the UK singles charts in January 1964: it peaked at number 6 in the United States in April 1964</p>
+			<p data-filtertext="Hollies">The Hollies are an English rock group known for their pioneering and distinctive three part vocal harmony style.&nbsp;&nbsp;The Hollies became one of the leading British groups of the 1960s (231 weeks on the UK singles charts during the 1960s; the 9th highest of any artist of the decade) and into the mid 1970s.</p>
+			<p data-filtertext="Yardbirds">The Yardbirds are an English rock band that had a string of hits in the mid-1960s, including "For Your Love", "Over Under Sideways Down" and "Heart Full of Soul".&nbsp;&nbsp;The group is notable for having started the careers of three of rock's most famous guitarists: Eric Clapton, Jeff Beck and Jimmy Page, all of whom were in the top five of Rolling Stone's 100 Top Guitarists list (Clapton at No. 2, Page at No. 3 and Beck at No. 5).</p>
+			
+		</div>
+		<span style="font-size:x-small">The above information was taken from the Wikipedia page on the British Invasion.</span>
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Copyright &copy;2014 HOTT, Inc.</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+</body>
+</html>
+

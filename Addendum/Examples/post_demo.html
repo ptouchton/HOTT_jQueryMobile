@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>$.post() Demo</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="css/jquery.mobile-1.4.4.min.css" />
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script>
+		$(document).on('pagecreate', function(){
+			$.post('50s.php', function (data) {
+				$(data).find('entry').each(function () {
+                	var $entry = $(this);
+                	var newDiv = $('<div data-role="collapsible">');
+					var title = $('<h3>').text($entry.attr('CD'));
+					var $newList = $('<ul data-role="listview" data-inset="true">');
+               		var artist = $('<li>').text($entry.attr('artist'));
+               		var reclabel = $('<li>').text($entry.find('label').text());
+               		var release = $('<li>').text($entry.find('release').text());
+
+                	newDiv.append(title);                     
+
+					$newList.append(artist);
+					$newList.append(reclabel);
+					$newList.append(release);
+					newDiv.append($newList);
+ 					$('#CDLibrary').append(newDiv).collapsibleset('refresh');
+ 					$('#CDLibrary').enhanceWithin();
+				});
+			});
+			
+		});
+	</script>	
+	<script src="js/jquery.mobile-1.4.4.min.js"></script>
+</head>
+<body>
+
+<div data-role="page">
+
+	<div data-role="header">
+		<h1>Top Albums of the 50s</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<div id="CDLibrary" data-role="collapsible-set"></div>
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Copyright &copy;2014 HOTT, Inc.</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE HTML> 
+<html> 
+<head> 
+<title>jQuery Mobile</title> 
+  <link rel="stylesheet" href="css/jquery.mobile-1.4.4.min.css" /> 
+  <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+  <script type="text/javascript" src="js/jquery.mobile-1.4.4.min.js"></script> 
+  <script type="text/javascript">
+  $(document).on('pageshow',function(){
+    $('#showLoader').on('click',function(){
+
+      /* Show the Loader */
+
+      $.mobile.loading('show',{
+        theme: 'b',
+        text: 'Loading...',
+        textVisible: true
+      }); 
+
+
+    });
+  });
+  </script>
+</head> 
+<body>
+<div data-role="page" id="page1">
+  <div data-role="header"> 
+    <h2>Page 1</h2> 
+  </div>
+  <div role="main" class="ui-content">
+    <input id="showLoader" type="button" value="Show Loader" />
+  </div>
+  <div data-role="footer">
+    <h2>Copyright &copy;2014 HOTT, Inc.</h2>
+  </div>
+</div>
+</body>
+</html>

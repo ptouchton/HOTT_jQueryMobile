@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Popup with Padding</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="css/jquery.mobile-1.4.4.min.css" />
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/jquery.mobile-1.4.4.min.js"></script>
+	
+</head>
+<body>
+
+<div data-role="page">
+
+	<div data-role="header">
+		<h1 id="position-header">Padding the Popup</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<a href="#popupNotPadded" data-rel="popup" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">Popup without padding</a>
+			<div data-role="popup" id="popupNotPadded">
+				<h4>Without padding</h4>
+				<p>Lorem ipsum dolor...</p>
+			</div>
+		<a href="#popupPadded" data-rel="popup" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">Popup with padding</a>
+			<div data-role="popup" id="popupPadded" class="ui-content">
+				<h4>With padding</h4>
+				<p>Lorem ipsum dolor...</p>
+			</div>		
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Copyright &copy;2014 HOTT, Inc.</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+</body>
+</html>

@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Tabs Demo - Tabs Events</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="css/jquery.mobile-1.4.4.min.css" />
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/jquery.mobile-1.4.4.min.js"></script>
+	<script>
+	$(document).on('tabsactivate', '#myTabs', function(event, ui){
+  		console.log('The ' + ui.newTab.text() + ' was activated.');
+});
+
+	</script>
+</head>
+<body>
+
+<div data-role="page">
+
+	<div data-role="header">
+		<h1>Tabs Demo - Tabs Events</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<div data-role="tabs" id="myTabs">
+
+    <div data-role="navbar">
+  <ul>
+    <li><a href="#tab1">One</a></li>
+    <li><a href="#tab2">Two</a></li>
+    <li><a href="#tab3">Three</a></li>
+  </ul>
+</div>
+
+  <div id="tab1">
+    <h3>Tab 1 Content</h3>
+  </div>
+  <div id="tab2">
+    <h3>Tab 2 Content</h3>
+  </div>
+  <div id="tab3">
+    <h3>Tab 3 Content</h3>
+  </div>
+</div>
+
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Copyright &copy;2014 HOTT, Inc.</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+
+</body>
+</html>

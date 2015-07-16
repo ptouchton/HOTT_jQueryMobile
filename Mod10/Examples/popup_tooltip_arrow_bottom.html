@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Popup Demo - Tooltip Arrow (True)</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="css/jquery.mobile-1.4.4.min.css" />
+	<style>
+	.ui-btn.hott-tooltip-btn,
+	.ui-btn.hott-tooltip-btn:hover,
+	.ui-btn.hott-tooltip-btn:active {
+    	background: none;
+    	border: 0;
+	}
+
+	</style>
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/jquery.mobile-1.4.4.min.js"></script>
+
+</head>
+<body>
+
+<div data-role="page">
+
+	<div data-role="header">
+		<h1>Popup Demo - Tooltip Arrow (True)</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		
+	<p>Click the icon to the right to display a tooltip. <a href="#popupInfo" data-rel="popup" data-transition="pop" class="hott-tooltip-btn ui-btn ui-alt-icon ui-nodisc-icon ui-btn-inline ui-icon-info ui-btn-icon-notext" title="Learn more" id="imgMore">Learn more</a></p>
+	<div data-role="popup" id="popupInfo" data-position-to="#p3" class="ui-content" data-theme="a" style="max-width:350px;" data-arrow="b">
+  <p>Lorem ipsum dolor…</p>
+</div>
+<p id="p2">Paragraph 2</p>
+<p id="p3">Paragraph 3</p>
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Page Footer</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+
+</body>
+</html>

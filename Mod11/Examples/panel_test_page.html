@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Panel Demo - Simple</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+	<link rel="stylesheet" href="css/jquery.mobile-1.4.4.min.css" />
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/jquery.mobile-1.4.4.min.js"></script>
+</head>
+<body>
+
+<div data-role="page">
+
+	<div data-role="header">
+		<h1>Panels Test Page</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		
+	<ul data-role="listview">
+      <li><a class="ui-btn" href="#simplePanel1">Simple Panel</a></li>
+      <li><a class="ui-btn" href="#simplePanel2">Simple Panel (right)</a></li>
+      <li><a class="ui-btn" href="#complexPanel">Complex Panel</a></li>
+      <li><a class="ui-btn" href="#NoSwipePanel">"Swipe to close" disabled</a></li>
+      <li><a class="ui-btn" href="#NoTapPanel">"Tap outside to close" disabled</a></li>
+      <li><a class="ui-btn" href="#panelWithClose">Panel with a "close" button</a></li>
+      <li><a class="ui-btn" href="#noAnimation">Panel with no animation</a></li>
+      <li><a class="ui-btn" href="#revealDisplay">Panel with "reveal" display mode</a></li>
+      <li><a class="ui-btn" href="#overlayDisplay">Panel with "overlay" display mode</a></li>
+      <li><a class="ui-btn" href="#pushDisplay">Panel with "push" display mode</a></li>
+	
+	</ul>
+
+		
+	 
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Copyright &copy;2014 HOTT, Inc.</h4>
+	</div><!-- /footer -->
+	<!-- Simple Panel -->
+	<div data-role="panel" id="simplePanel1"> 
+  	  <h2>Simple Panel</h2>
+  	  <p>You can close the panel by clicking outside the panel, pressing the Esc key or by swiping.</p>
+  	</div>
+
+	<!-- Simple Panel (right)-->
+	<div data-role="panel" id="simplePanel2" data-position="right"> 
+  	  <h2>Simple Panel</h2>
+  	  <p>You can close the panel by clicking outside the panel, pressing the Esc key or by swiping.</p>
+  	</div>
+
+
+	<!-- Panel with Close Button -->  
+  	<div data-role="panel" id="panelWithClose"> 
+  	  <a href="#home" data-rel="close" class="ui-btn ui-btn-left ui-btn-a ui-corner-all ui-icon-delete ui-btn-icon-notext">Close</a>
+     
+  	  <h2>Panel with Close button</h2>
+  	  <p>Tap the Close button to close the panel.</p>
+  	</div>
+
+  	<div data-role="panel" id="noAnimation" data-animate="false" data-display="overlay">
+      <h2>No Animation</h2>
+      <p>This panel's open/close animation has been disabled using the <code>data-animate="false"</code> attribute.</p>
+    </div>
+  	
+  	<div data-role="panel" id="revealDisplay" data-display="reveal">
+
+      <h2>"Reveal" Display Mode</h2>
+      <p>This panel uses the <code>data-display="reveal"</code> attribute.</p>
+    </div>
+
+    <div data-role="panel" id="overlayDisplay" data-display="overlay">
+
+      <h2>"Overlay" Display Mode</h2>
+      <p>This panel uses the <code>data-display="overlay"</code> attribute.</p>
+    </div>
+
+    <div data-role="panel" id="pushDisplay" data-display="push">
+
+      <h2>"Push" Display Mode</h2>
+      <p>This panel uses the <code>data-display="push"</code> attribute.</p>
+    </div>
+  	
+  	<div data-role="panel" id="complexPanel" data-position="right" data-display="overlay">
+
+      <h2>About the Swan Boats</h2>
+
+      <img src="images/swan-boats.jpg" alt="Swan Boats" style="width: 100%; border: 1px solid brown; box-sizing: border-box;"/>
+      <p>The Swan Boats are a fleet of dual-pontooned pleasure boats which operate in a pond in the Public Garden in Boston, Massachusetts.&nbsp;&nbsp;The Swan Boats have been in operation since 1877, and have since become a cultural icon for the city.&nbsp;&nbsp;They operate beginning the second weekend of April and ending the third weekend in September.&nbsp;&nbsp;Robert Paget first created the Swan Boats in the Public Garden in 1877 after operating a Row Boat rental operation, after seeing the opera Lohengrin with his wife Julia Paget.&nbsp;&nbsp;Inspired by the Knight's gallant rescue of the damsel by riding a Swan across the lake, Paget decided to capitalize on the recent popularity of the bicycle and combine boat with swan and bicycle on the water, and designed a two pontooned boat with two wooden benches and a brass seat on top of a paddlebox concealed by a swan.&nbsp;&nbsp;The driver would sit inside the swan and pedal passengers around the pond.
+      </p>
+      
+    </div>
+
+	<div data-role="panel" id="NoSwipePanel" data-swipe-close="false">
+      <h2>"Swipe to Close" Disabled</h2>
+      <p>This panel's "swipe to close" feature is disabled using the <code>data-swipe-close="false"</code> attribute.</p>
+    </div>
+
+    <div data-role="panel" id="NoTapPanel" data-dismissible="false">
+      <h2>"Tap Outside to Close" Disabled</h2>
+      <p>This panel's "tap outside the panel to close" feature is disabled using the <code>data-dismissible="false"</code> attribute.</p>
+    </div>
+
+</div><!-- /page -->
+
+</body>
+</html>

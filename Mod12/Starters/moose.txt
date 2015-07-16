@@ -1,0 +1,14 @@
+<div id="#moose" class="ui-content">
+	<h3>Moose</h3>
+	<video id="video1" width="200" controls>
+		<source src="videos/moose.m4v" type="video/mp4" />
+		<source src="videos/moose.ogv" type="video/ogg" />
+		Your browser does not support the video element.
+	</video>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi auctor luctus molestie. Cras ante diam, auctor sit amet facilisis sit amet, consequat in massa. Maecenas libero leo, placerat ut nisl ut, blandit adipiscing lacus. Sed aliquam rutrum urna, ut commodo sapien semper commodo. Aenean posuere, diam sit amet pretium suscipit, ante urna vulputate tortor, in lobortis libero turpis a sapien. Donec eleifend in libero non fringilla. Aliquam dignissim suscipit nulla et venenatis. Nullam scelerisque, sapien sit amet varius tincidunt, nulla metus rhoncus enim, nec hendrerit nulla augue a lectus. In hac habitasse platea dictumst</p>
+	<ul>
+		<li><span class="label"><strong>Species Name</strong></span><strong>: </strong>Alces americanus</li>
+		<li><strong>Diet:</strong>shoots, plants, bark</li>
+		<li><strong>Weight: </strong>Males - 840 - 1,540 lb | Females - 440 - 790 lb</li>
+	</ul>
+</div>

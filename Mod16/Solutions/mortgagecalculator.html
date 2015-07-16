@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Mortgage Calculator</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="css/jquery.mobile-1.4.4.min.css" />
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script>
+		(function($) {
+			$.fn.calculateMortgage = function(options) {
+				var defaults = {
+					currency: '$',
+					params: {}
+				};
+				options = $.extend(defaults, options);
+		
+				var calculate = function(params) {
+					params = $.extend({
+						amount: 0,
+						rate: 0,
+						term: 0,
+						period: 0
+					}, params);
+			
+					var N = params.term * params.period;
+					var I = (params.rate / 100) / params.period;
+					var v = Math.pow((1 + I), N);
+					var t = (I * v) / (v - 1);
+					var result = params.amount * t;
+			
+					return result;
+		
+				};
+		
+				return this.each(function() {
+					var $element = $(this);
+					
+					var $result = calculate(options.params);
+					var output = '<p>' + options.currency + ' ' + $result.toFixed(2) + '</p>';
+					$(output).appendTo($element);
+				});
+	
+			};
+		})(jQuery);
+	
+	//Add your code here
+	$(document).on('pagecreate', function(){
+			$('#frmCalc').on('submit', function(e) {
+		e.preventDefault();
+			
+		var $params = {
+			amount: $('#txtAmount').val(),
+			rate: $('#txtRate').val(),
+			term: $('#txtTerm').val(),
+			period: $('option:selected', '#select-period').val()
+		};
+		
+		$(this).calculateMortgage({
+			params: $params
+		})
+	
+		
+	});	
+
+
+});
+
+</script>
+
+	<script src="js/jquery.mobile-1.4.4.min.js"></script>
+</head>
+<body>
+
+<div data-role="page">
+
+	<div data-role="header">
+		<h1>Mortgage Calculator</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<form id="frmCalc" action="#" method="post">
+			<h4>Please insert decimals using the dot notation, e.g. <code>5.9</code></h4>
+			<div class="ui-field-contain">
+				<label for="txtAmount">Loan amount ($):</label>
+				<input name="txtAmount" id="txtAmount" type="text" placeholder="Enter loan amount" required="required" />
+			</div>
+			<div class="ui-field-contain">
+				<label for="txtRate">Interest rate (%):</label>
+				<input name="txtRate" id="txtRate" type="text" placeholder="Enter rate" required="required" />
+			</div>
+			<div class="ui-field-contain">
+				<label for="txtTerm">Loan term (years):</label>
+        		<input type="range" id="txtTerm" min="10" max="30" step="5" value="15" />
+			</div>
+			<div class="ui-field-contain">
+				<label for="select-period">Period:</label>
+				<select name="select-period" id="select-period" data-native-menu="false">
+					<option>Select</option>
+					<option value="12">Monthly</option>
+					<option value="6">Bimonthly</option>
+				</select>
+			</div>
+			<div class="ui-grid-solo">
+				<div class="ui-block-a"></div><input type="submit" id="btnCalc" name="btnCalc" value="Calculate" />	
+			</div>
+			
+    
+</form>
+
+
+
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Copyright &copy;2014 HOTT, Inc.</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+
+</body>
+</html>

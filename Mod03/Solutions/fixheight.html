@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Consistent Height Demo</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="css/jquery.mobile-1.4.4.min.css" />
+	<style>
+		.background-gradient{
+	
+				background: #f85032;
+				background: -moz-linear-gradient(top, #f85032 0%, #6d1212 100%); /* FF3.6+ */
+				background: -webkit-gradient(linear, left top, left bottom,
+							color-stop(0%,#f85032), color-stop(100%,#6d1212)); /* Chrome,Safari4+ */
+				background: -webkit-linear-gradient(top, #f85032 0%,#6d1212 100%); /* Chrome10+,Safari5.1+ */
+				background: -o-linear-gradient(top, #f85032 0%,#6d1212 100%); /* Opera 11.10+ */
+				background: -ms-linear-gradient(top, #f85032 0%,#6d1212 100%); /* IE10+ */
+				background: linear-gradient(to bottom, #f85032 0%,#6d1212 100%); /* W3C */
+				filter: progid:DXImageTransform.Microsoft.gradient(
+					startColorstr='#f85032', endColorstr='#6d1212',GradientType=0 ); /* IE6-9 */
+		}
+	/*	#fixedcontent {
+                padding: 0;
+                position : absolute !important;
+                top : 40px !important; 
+                right : 0;
+                bottom : 40px !important; 
+                left : 0 !important;
+
+        } */
+        #fixedcontent {
+        		padding: 0 !important;
+        
+    }
+	</style>
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script>
+    	$(document).on('pagecontainershow',function(e,data){  
+    	    $('#fixedcontent').height(getRealContentHeight());
+    	    
+    	});
+    	$(window).on('resize', function(){
+    	    $('#fixedcontent').height(getRealContentHeight());
+       	});
+ 
+    	function getRealContentHeight() {
+	        
+	        var header = $(':mobile-pagecontainer').pagecontainer('getActivePage').find('div[data-role="header"]:visible');
+	        var footer = $(':mobile-pagecontainer').pagecontainer('getActivePage').find('div[data-role="footer"]:visible');
+	        var content = $(':mobile-pagecontainer').pagecontainer('getActivePage').find('div[role="content"]:visible');
+	        
+	        var viewport_height = $(window).height();
+	 
+	        var content_height = viewport_height - header.outerHeight() - footer.outerHeight();
+	        if((content.outerHeight() - header.outerHeight() - footer.outerHeight()) <= viewport_height) {
+	            content_height -= (content.outerHeight() - content.height());
+	        }
+	        return content_height;
+    	}
+    </script>
+
+	<script src="js/jquery.mobile-1.4.4.min.js"></script>
+</head>
+<body>
+
+<div data-role="page">
+
+	<div data-role="header">
+		<h1>Consistent Height Demo</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content background-gradient" id="fixedcontent">
+		<p>Page content goes here.</p>
+	</div><!-- /content -->
+	<div data-role="footer" data-position="fixed">
+		<h4>Copyright &copy;2014 HOTT, Inc.</h4>
+	</div><!-- /footer -->
+
+</div><!-- /page -->
+
+</body>
+</html>

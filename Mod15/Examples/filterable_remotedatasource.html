@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Filterable Demo - Remote Data Source</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="css/jquery.mobile-1.4.4.min.css" />
+	<style>
+		.ui-filter-inset {
+    		margin-top: 0;
+		}
+	</style>
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script>
+	$(document).on('pagecreate', function() {
+    $('#citiesList').on('filterablebeforefilter', function( evt, data){
+        var $this = $(this);
+        var $input = $(data.input);
+        var value = $input.val();
+        var html = '';
+        $this.html('');
+        if (value && value.length > 2) {
+            $this.html('<li><div class="ui-loader"><span class="ui-icon ui-icon-loading"></span></div></li>');
+            $this.listview('refresh');
+            $.ajax({
+                url: 'http://gd.geobytes.com/AutoCompleteCity',
+                dataType: "jsonp",
+                crossDomain: true,
+                data: {
+                    q: $input.val()
+                }
+            })
+            .then( function ( response ) {
+                $.each( response, function ( i, val ) {
+                    html += '<li>' + val + '</li>';
+                });
+                $this.html(html);
+                $this.listview('refresh');
+                $this.trigger('updatelayout');
+            });
+        }
+    });
+});
+	</script>
+	<script src="js/jquery.mobile-1.4.4.min.js"></script>
+</head>
+<body>
+
+<div data-role="page">
+
+	<div data-role="header">
+		<h1>Filterable Demo - Remote Data Source</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<h3>Cities worldwide</h3>
+		<p>After you enter <strong>at least three characters</strong> the autocomplete function will show all possible matches.</p>
+		<form class="ui-filterable">
+    		<input id="txtSearchCities" type="search">
+		</form>
+		<ul id="citiesList" data-input="#txtSearchCities" data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="Enter a city..." data-filter-theme="b"></ul>	
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Copyright &copy;2014 HOTT, Inc.</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+
+</body>
+</html>

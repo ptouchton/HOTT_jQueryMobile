@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Multi Panels</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="css/jquery.mobile-1.4.4.min.css" />
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script>
+	
+	 $(document).on('pagecontainershow',function(){
+        var opts = {
+        		position: 'right',
+        		display: 'push'
+        };
+        $('#manualPanel').panel(opts);
+        $('#manualPanel').panel('open');
+        
+     
+      });
+
+	</script>
+	<script src="js/jquery.mobile-1.4.4.min.js"></script>
+</head>
+<body>
+
+<div data-role="page">
+
+	<div data-role="header">
+		<h1>Multi Panels</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<p>This page will link to several panels.</p>
+		<p>We'll be putting links to panels in the footer.</p>
+
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Copyright &copy;2014 HOTT, Inc.</h4>
+		<div data-role="navbar">
+      	<ul>
+      	  <li><a href="#testPanel">Test Panel</a></li>
+      	  <li><a href="#overlayTestPanel">Overlay Panel</a></li>
+      	  <li><a href="#pushTestPanel">Push Panel</a></li>
+      	  <li><a id="manualLink" href="#manualPanel">Manually Configured Panel</a></li>
+
+      	</ul>
+    </div>
+
+	</div><!-- /footer -->
+	
+	<div id="testPanel" data-role="panel">
+    	<p>This is a panel!</p>
+    	<p>The code for a panel exists entirely within the containing page.</p>
+    	<a href="#" data-rel="close">Close</a>
+  	</div>
+  	
+	<div id="overlayTestPanel" data-role="panel" data-position="right" data-display="overlay">
+    <p>This is a panel!</p>
+    <p>The code for a panel exists entirely within the containing page.</p>
+    <a href="#" data-rel="close">Close</a>
+ 	</div>
+	
+  <div id="pushTestPanel" data-role="panel" data-position="right" data-display="push">
+    <p>This is a panel!</p>
+    <p>The code for a panel exists entirely within the containing page.</p>
+    <a href="#" data-rel="close">Close</a>
+  </div>
+  
+  <div id="manualPanel">
+    <p>This is a panel!</p>
+    <p>The code for a panel exists entirely within the containing page.</p>
+    <a href="#" data-rel="close">Close</a>
+  </div>
+  
+</div><!-- /page -->
+
+</body>
+</html>

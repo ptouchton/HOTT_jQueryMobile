@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Listview - Filterable</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="css/jquery.mobile-1.4.4.min.css" />
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/jquery.mobile-1.4.4.min.js"></script>
+</head>
+<body> 
+
+<div data-role="page">
+
+    <div data-role="header">
+      <h1>Search Filter</h1>
+    </div><!-- /header -->
+    <div role="main" class="ui-content"> 
+    <form class="ui-filterable">
+    	<input type="search" id="txtSearchStates" placeholder="Search for a State...">
+    </form>
+    <ul data-role="listview" data-filter="true" data-input="#txtSearchStates" data-autodividers="true" data-inset="true" >
+    <li><a href="#">Alabama</a></li>
+    <li><a href="#">Alaska</a></li>
+    <li><a href="#">Arizona</a></li>    
+    <li><a href="#">Arkansas</a></li>
+    <li><a href="#">California</a></li>
+    <li><a href="#">Colorado</a></li>    
+    <li><a href="#">Connecticut</a></li>    
+    <li><a href="#">Delaware</a></li>    
+    <li><a href="#">Florida</a></li>    
+    </ul>
+		
+    </div><!-- /content -->
+	<div data-role="footer">
+		<h4>Copyright &copy;2014 HOTT, Inc.</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+
+</body>
+</html>

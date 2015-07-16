@@ -1,0 +1,209 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Table Widget Demo - Striping</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="css/jquery.mobile-1.4.4.min.css" />
+	<style>
+	
+		/* Use these styles for all screen widths */
+		/* Labels will be in uppercase and light gray at all screen widths */
+		.albumlist thead th, .albumlist tbody th .ui-table-cell-label, .albumlist tbody td .ui-table-cell-label {
+    		text-transform: uppercase;
+    		font-size: .7em;
+    		color: rgba(0,0,0,0.5);
+    		font-weight: normal;
+		}
+		/* White bg, large blue text for rank and album title */
+		.albumlist  tbody th {
+		    font-size: 1.2em;
+		    background-color: #fff;
+		    color: #77bbff;
+		    text-align: center;
+		}
+		/*  Add extra left padding for the album title */
+		.albumlist  tbody td.title {
+		    padding-left: .8em;
+		}
+		/* Add strokes */
+		.albumlist  thead th {
+		    border-bottom: 1px solid rgba(0,0,0,.1);
+		}
+		.albumlist  tbody th, .albumlist tbody td {
+    		border-bottom: 1px solid rgba(0,0,0,.05);
+		}
+		/*  Customized styles for stacked layout */
+		/*  Use a max-width media query so we don't have to undo these styles */
+		@media (max-width: 40em) {
+		    /*  Remove the margin between sections */
+		    .albumlist  tbody th {
+		        margin-top: 0;
+		        text-align: left;
+		    }
+		    /*  White bg, large blue text for rank and album title */
+		    .albumlist  tbody th,
+		    .albumlist  tbody td.title {
+		        display: block;
+		        font-size: 1.2em;
+		        line-height: 110%;
+		        padding: .5em .5em;
+		        background-color: #fff;
+		        color: #77bbff;
+		        -moz-box-shadow: 0 1px 6px rgba(0,0,0,.1);
+		        -webkit-box-shadow: 0 1px 6px rgba(0,0,0,.1);
+		        box-shadow: 0 1px 6px rgba(0,0,0,.1);
+		    }
+		    /*  Hide labels for rank and album title */
+		    .albumlist  tbody th .ui-table-cell-label,
+		    .albumlist  tbody td.title .ui-table-cell-label {
+		        display: none;
+		    }
+		    /*  Position the album title next to the rank, pad to the left */
+		    .albumlist  tbody td.title {
+		        margin-top: -2.1em;
+		        padding-left: 2.2em;
+		        border-bottom: 1px solid rgba(0,0,0,.15);
+		    }
+		    /*  Make the data bold */
+    		.albumlist  th, .albumlist  td {
+        		font-weight: bold;
+    		}
+    		/* Make the label elements a percentage width */
+    		.albumlist  td .ui-table-cell-label,
+    		.albumlist  th .ui-table-cell-label {
+    		    min-width: 20%;
+    		}
+		}
+		/* Media query to show as a standard table at wider widths */
+		@media ( min-width: 40em ) {
+		    /* Show the table header rows */
+		    .albumlist  td,
+		    .albumlist  th,
+		    .albumlist  tbody th,
+		    .albumlist  tbody td,
+		    .albumlist  thead td,
+		    .albumlist  thead th {
+		        display: table-cell;
+		        margin: 0;
+		    }
+		    /* Hide the labels in each cell */
+		    .albumlist  td .ui-table-cell-label,
+		    .albumlist  th .ui-table-cell-label {
+		        display: none;
+		    }
+		}
+		/* Hack to make IE9 and WP7.5 treat cells like block level elements */
+		/* Applied in a max-width media query up to the table layout breakpoint so we don't need to negate this */
+		@media ( max-width: 40em ) {
+		    .albumlist  td, .albumlist  th {
+		        width: 100%;
+		        -webkit-box-sizing: border-box;
+		        -moz-box-sizing: border-box;
+		        box-sizing: border-box;
+		        float: left;
+		        clear: left;
+		    }
+		}	
+	</style>
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/jquery.mobile-1.4.4.min.js"></script>
+	
+</head>
+<body>
+
+<div data-role="page">
+
+	<div data-role="header">
+		<h1>Table Widget Demo -Striping</h1>
+	</div><!-- /header -->
+<div role="main" class="ui-content">
+<table data-role="table" id="album-table"  class="albumlist">
+    <thead>
+        <tr>
+            <th>Rank</th>
+            <th>Album Title</th>
+            <th>Band</th>
+            <th>Year</th>            
+        </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>1</th>
+                <td class="title"><a href="http://en.wikipedia.org/wiki/Too_Fast_for_Love" data-rel="external">Too Fast for Love</a></td>
+                <td>Motley Crue</td>
+                <td>1981</td>
+            </tr>
+            <tr>
+                <th>2</th>
+                <td class="title"><a href="http://en.wikipedia.org/wiki/Van_Halen_(album)" data-rel="external">Van Halen</a></td>
+                <td>Van Halen</td>
+                <td>1978</td>
+            </tr>
+            <tr>
+                <th>3</th>
+                <td class="title"><a href="http://en.wikipedia.org/wiki/Pyromania_(album)" data-rel="external">Pyromania</a></td>
+                <td>Def Leppard</td>
+                <td>1983</td>
+            </tr>
+            <tr>
+                <th>4</th>
+                <td class="title"><a href="http://en.wikipedia.org/wiki/1984_(Van_Halen_album)" data-rel="external">1984</a></td>
+                <td>Van Halen</td>
+                <td>1983</td>
+            </tr>
+            <tr>
+                <th>5</th>
+                <td class="title"><a href="http://en.wikipedia.org/wiki/Slippery_When_Wet" data-rel="external">
+				Slippery When Wet</a></td>
+                <td>Bon Jovi</td>
+                <td>1986</td>
+            </tr>
+            <tr>
+                <th>6</th>
+                <td class="title"><a href="http://en.wikipedia.org/wiki/Appetite_for_Destruction" data-rel="external">
+				Appetite for Destruction</a></td>
+                <td>Guns 'n Roses</td>
+                <td>1987</td>
+            </tr>
+            <tr>
+                <th>7</th>
+                <td class="title"><a href="http://en.wikipedia.org/wiki/Mechanical_Resonance" data-rel="external">
+				Mechanical Resonance</a></td>
+                <td>Tesla</td>
+                <td>1986</td>
+            </tr>
+            <tr>
+                <th>8</th>
+                <td class="title"><a href="http://en.wikipedia.org/wiki/Open_Up_and_Say..._Ahh!" data-rel="external">
+				Open Up and Say Ahh!</a></td>
+                <td>Poison</td>
+                <td>1988</td>
+            </tr>
+            <tr>
+                <th>9</th>
+                <td class="title"><a href="http://en.wikipedia.org/wiki/Out_of_the_Cellar">Out of 
+				the Cellar</a></td>
+                <td>Ratt</td>
+                <td>1983</td>
+            </tr>
+            <tr>
+                <th>10</th>
+                <td class="title"><a href="http://en.wikipedia.org/wiki/The_Yellow_and_Black_Attack"  data-rel="external">The 
+				Yellow &amp; Black Attack</a></td>
+                <td>Stryper</td>
+                <td>1984</td>
+            </tr>
+        </tbody>
+    </table>
+<span style="font-size:xx-small">The Top Ten Most Influential Hair Metal Albums (according to <a href="www.angelfire.com/80s/hairhole/topten.html">www.angelfire.com/80s/hairhole/topten.html)</a></span>
+   </div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Copyright &copy;2014 HOTT, Inc.</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+
+</body>
+</html>

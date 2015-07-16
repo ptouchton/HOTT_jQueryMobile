@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Displaying RSS Feeds</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="css/jquery.mobile-1.4.4.min.css" />
+	<link rel="stylesheet" href="css/jquery.zrssfeed.css" />
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/jquery.zrssfeed.min.js"></script>
+	<script>
+	$(document).on('pagecreate', function () {
+	$('#test').rssfeed('http://rssfeeds.usatoday.com/UsatodaycomMusic-TopStories', {
+		limit: 5,
+		linkcontent: true
+	});
+});
+	</script>
+	<script src="js/jquery.mobile-1.4.4.min.js"></script>
+
+</head>
+<body>
+
+<div data-role="page">
+
+	<div data-role="header">
+		<h1>Displaying RSS Feeds</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<h4>Result</h4>
+<div id="test"></div>
+
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Copyright &copy;2014 HOTT, Inc.</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+
+</body>
+</html>

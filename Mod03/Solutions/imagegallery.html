@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Image Gallery</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="css/jquery.mobile-1.4.4.min.css" />
+	<link rel="stylesheet" href="css/park.css" />
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script>
+		$(document).on('pagecreate', '#imggallery_index',function(e, data){
+		    $(document).on('click', '.park li a', function() {
+		        handler.image = $(this).find('img').attr('src');
+	        
+		        $(':mobile-pagecontainer').pagecontainer( "change", '#imagepage', { transition: 'fade', changeHash: false } );
+		    });
+		});
+	 
+		$(document).on('pagecontainerbeforeshow', function(e, data){
+	
+		    var activePage = $(':mobile-pagecontainer').pagecontainer('getActivePage');
+		    activePage.find('.show').attr('src',handler.image);
+		
+		});
+	 
+		var handler = {
+		    image: ''
+		}
+	</script>
+	<script src="js/jquery.mobile-1.4.4.min.js"></script>
+</head>
+<body>
+
+<div data-role="page" id="imggallery_index" data-theme="a">
+
+	<div data-role="header" data-theme="b">
+		<h1>Acadia National Park - Maine</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<ul class="park">          
+                    <li><a><img src="images/acadia1.jpg" alt="Photo 1 of Acadia National Park"/></a></li>        
+                    <li><a><img src="images/acadia2.jpg" alt="Photo 2 of Acadia National Park"/></a></li>        
+                    <li><a><img src="images/acadia3.jpg" alt="Photo 3 of Acadia National Park"/></a></li>        
+                    <li><a><img src="images/acadia4.jpg" alt="Photo 4 of Acadia National Park"/></a></li>
+                    <li><a><img src="images/acadia5.jpg" alt="Photo 5 of Acadia National Park"/></a></li>
+                    <li><a><img src="images/acadia6.jpg" alt="Photo 6 of Acadia National Park"/></a></li>
+                    <li><a><img src="images/acadia7.jpg" alt="Photo 7 of Acadia National Park"/></a></li>
+                    <li><a><img src="images/acadia8.jpg" alt="Photo 8 of Acadia National Park"/></a></li>
+                    <li><a><img src="images/acadia9.jpg" alt="Photo 9 of Acadia National Park"/></a></li>
+
+                </ul>
+	</div><!-- /content -->
+
+	<div data-role="footer" data-position="fixed">
+		<h4>Copyright &copy;2014 HOTT, Inc.</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+<div data-role="page" id="imagepage">
+            <div data-theme="b" data-role="header">
+                <a href="#imggallery_index" data-icon="carat-l" data-transition="slide" data-direction="reverse">Back</a>
+                <h3>
+                    Acadia National Park - Maine
+                </h3>
+            </div>
+             
+            <div role="main">
+                <img src="" alt="show" class="show"/>
+            </div>           
+        </div>
+</body>
+</html>

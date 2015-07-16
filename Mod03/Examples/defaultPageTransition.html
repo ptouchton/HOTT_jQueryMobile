@@ -1,0 +1,62 @@
+<!DOCTYPE HTML> 
+<html> 
+<head> 
+<title>jQuery Mobile</title> 
+  <link rel="stylesheet" href="css/jquery.mobile-1.4.4.min.css" /> 
+  <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+  <script type="text/javascript"> 
+    $(document).on('mobileinit', function(){ 
+      $.extend($.mobile, { 
+        defaultPageTransition:'pop'
+      }); 
+    }); 
+  </script>
+  <script type="text/javascript" src="js/jquery.mobile-1.4.4.min.js"></script> 
+</head> 
+<body>
+<div data-role="page" id="page1">
+  <div data-role="header"> 
+    <a href="#page1" data-icon="back" class="ui-btn-left">Page 1</a> 
+    <h2>Page 1</h2> 
+    <a href="#page2" data-icon="forward" class="ui-btn-right">Page 2</a> 
+    <div data-role="navbar"> 
+      <ul> 
+        <li><a href="#page2">Goto Page 2</a></li> 
+      </ul> 
+    </div> 
+  </div>
+  <div role="main" class="ui-content">
+  <p>This is page 1!</p>
+  </div>
+  <div data-role="footer" data-position="fixed"> 
+    <div data-role="navbar"> 
+      <ul> 
+        <li><a href="#page2">Page 2</a></li> 
+      </ul> 
+    </div> 
+  </div>
+</div>
+<div data-role="page" id="page2">
+  <div data-role="header"> 
+    <a href="#page1" data-icon="back" class="ui-btn-left">Page 1</a> 
+    <h2>Page 2</h2> 
+    <a href="#page2" data-icon="forward" class="ui-btn-right">Page 2</a> 
+    <div data-role="navbar"> 
+      <ul> 
+        <li><a href="#page1">Goto Page 1</a></li> 
+      </ul> 
+    </div> 
+  </div>
+  <div role="main" class="ui-content">
+  <p>This is page 2!</p>
+  </div>
+  <div data-role="footer" data-position="fixed"> 
+    <div data-role="navbar"> 
+      <ul> 
+        <li><a href="#page1">Page 1</a></li> 
+      </ul> 
+    </div> 
+  </div>
+</div>
+</body>
+</html>

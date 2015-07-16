@@ -1,0 +1,21 @@
+$('#output').empty();
+var s = "";
+var jqXHR = $.ajax(
+					{
+						url: 'GetRecords.php',                    
+						data: "",                        
+						dataType: 'json',                      
+						success: function(data){
+							s = '<div class="ui-block-a"><b>Name</b></div><div class="ui-block-b"><b>Email</b></div><div class="ui-block-c"><b>Phone</b></div>';
+
+							for(var i = 0; i < data.length; i++){
+								s+= '<div class="ui-block-a"><div class="ui-bar ui-bar-a">' + data[i][0] + '</div></div>' +
+									'<div class="ui-block-b"><div class="ui-bar ui-bar-a">' + data[i][1] + '</div></div>' +
+									'<div class="ui-block-c"><div class="ui-bar ui-bar-a">' + data[i][2] + '</div></div>';
+							}
+							$('#output').append(s);
+						} 
+
+					}); 
+jqXHR.error(function(){console.log('ERROR');})
+	 .always(function(){console.log('DONE');});

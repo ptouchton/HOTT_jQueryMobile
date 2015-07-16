@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Page Title</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="css/jquery.mobile-1.4.4.min.css" />
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script>
+     var $vidFrame;
+    $(document).on( 'pagecreate', function() {
+      $vidFrame = $('#videoPopup iframe');
+      $vidFrame.attr('width', 0).attr('height', 0);
+ 
+      $('#videoPopup').on({
+        popupbeforeposition: function() {
+          $vidFrame.attr('width',320).attr('height',240);
+        },
+        popupafterclose: function() {
+          $vidFrame.attr('width', 0).attr('height', 0);
+        }
+      });
+    });
+    
+   </script>
+
+	<script src="js/jquery.mobile-1.4.4.min.js"></script>
+</head>
+<body>
+
+<div data-role="page">
+
+	<div data-role="header">
+		<h1>Popups! Popups! Popups!</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<p>This page will link to several popups.</p>
+		<p>We'll be putting links to popups in the footer.</p>
+
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Copyright &copy;2014 HOTT, Inc.</h4>
+		<div data-role="navbar">
+      		<ul>
+       			<li><a href="#testPopup" data-rel="popup">Test Popup</a></li>
+       			<li><a href="#imagePopup" data-rel="popup" data-position-to="window">Image Popup</a></li>
+				<li><a href="#videoPopup" data-rel="popup" data-position-to="window">Video Popup</a></li>
+				<li><a href="#menuPopup1" data-rel="popup" data-position-to="window">Single-Level Menu Popup</a></li>
+      			<li><a href="#menuPopup2" data-rel="popup" data-position-to="window">Nested Menu Popup</a></li>
+      
+      		</ul>
+   </div>
+
+	</div><!-- /footer -->
+	
+	<div id="testPopup" data-role="popup">
+    	<p>This is a popup!</p>
+    	<p>The code for a popup exists entirely within the containing page.</p>
+  	</div>
+	<div id="imagePopup" class="photoPopup" data-role="popup" data-overlay-theme="b" data-theme="b" data-dismissible="false">
+    	<a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+    	<img src="images/acadia1.jpg" style="max-height: 564px;" alt="Photo of a Landscape" />
+  	</div>
+	<div id="videoPopup" class="ui-content" data-role="popup" data-overlay-theme="b" data-theme="a" data-tolerance="15,15">
+    	<a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+    	<iframe src="videos/whales.webm" width=320 height=240 style="border: none;"></iframe>
+  	</div>
+<div id="menuPopup1" data-role="popup" data-overlay-theme="b" data-theme="b">
+   	<a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+    <ul data-role="listview">
+      <li><a href="#" data-rel="dialog">Option 1</a></li>
+      <li><a href="#" data-rel="dialog">Option 2</a></li>
+      <li><a href="#" data-rel="dialog">Option 3</a></li>
+      <li><a href="#" data-rel="dialog">Option 4</a></li>
+    </ul>
+  </div>
+  <div id="menuPopup2" data-role="popup" data-overlay-theme="b" data-theme="b">
+   	<a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+    <div data-role="collapsibleset" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" style="margin: 0px;">
+      <div data-role="collapsible" data-inset="false">
+        <h2>Option 1</h2>
+        <ul data-role="listview">
+          <li><a href="#" data-rel="dialog">Option 1.1</a></li>
+          <li><a href="#" data-rel="dialog">Option 1.2</a></li>
+          <li><a href="#" data-rel="dialog">Option 1.3</a></li>
+        </ul>
+      </div>
+      <div data-role="collapsible" data-inset="false">
+        <h2>Option 2</h2>
+        <ul data-role="listview">
+          <li><a href="#" data-rel="dialog">Option 2.1</a></li>
+          <li><a href="#" data-rel="dialog">Option 2.2</a></li>
+          <li><a href="#" data-rel="dialog">Option 2.3</a></li>
+        </ul>
+      </div>
+      <div data-role="collapsible" data-inset="false">
+        <h2>Option 3</h2>
+        <ul data-role="listview">
+          <li><a href="#" data-rel="dialog">Option 3.1</a></li>
+          <li><a href="#" data-rel="dialog">Option 3.2</a></li>
+          <li><a href="#" data-rel="dialog">Option 3.3</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div><!-- /page -->
+
+</body>
+</html>

@@ -1,0 +1,84 @@
+﻿<!doctype html>
+<html>
+<head>
+<title>The pagecontainer Widget's change() Method</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="css/jquery.mobile-1.4.4.min.css" />
+<script src="js/jquery-1.11.1.min.js"></script>
+
+<script>
+	// Change to the Rooms page if the user clicks OK
+	$(document).on( 'click', '#showRooms', function() {
+		if (confirm('View the available rooms?') ) {
+			$('body').pagecontainer( 'change', "#rooms", { transition: "pop",
+			loadMsgDelay: 1 } );
+		}
+	} );
+	
+	// Create a new mobile page, #staffList, programmatically,
+	// then change to it
+	$(document).on( 'click', '#viewStaffList', function() {
+		$('#staffList').remove();
+		var staffListMarkup = '<div data-role="page" id="staffList">';
+		staffListMarkup += '<div data-role="header" data-add-backbtn="true"><h1>Staff List</h1></div>';
+		staffListMarkup += '<div role="main" class="ui-content">';
+		staffListMarkup += '<ul datarole="listview" id="staffListView"><li><img src="images/j_winchester.jpg">Jessica Winchester</li><li><img src="images/m_harris.jpg">Mark Harris</li><li><img src="images/b_smith.jpg">Bob Smith</li></ul></div>';
+		staffListMarkup += '</div>';
+		$('body').append( staffListMarkup );
+		$('#staffListView','body').listview();
+		$('body').pagecontainer( 'change', "#staffList", { transition:"flip" } );
+	} );
+	// Use change() to submit a form, if valid
+	$(document).on( 'submit', '#frmSearch', function() {
+		if ( $("#txtSearch").val() ) {
+			$('body').pagecontainer( 'change', $('#frmSearch').attr('action'),
+			{
+				type: $('#frmSearch').attr('method'),
+				data: $('#txtSearch').serialize()
+			} );
+		}
+		return false;
+	} );
+</script>
+<script src="js/jquery.mobile-1.4.4.min.js"></script>
+</head>
+<body>
+<div data-role="page" id="home">
+<div data-role="header">
+<h1>The pagecontainer Widget's change() Method</h1>
+</div>
+<div role="main" class="ui-content">
+<h2>Home Page</h2>
+<form id="frmSearch" action="searchResults.html" method="get" dataajax="false">
+<div class="ui-field-contain">
+<label for="txtSearch">Search the Site:</label>
+<input type="search" name="txtSearch" id="txtSearch">
+</div>
+</form>
+<p><a id="showRooms" href="#" class="ui-btn">Show Room Types</a></p>
+<p><a id="viewStaffList" href="#" class="ui-btn">Meet the Staff</a></p>
+
+</div>
+</div>
+<div data-role="page" id="rooms">
+<div data-role="header">
+<h1>The pagecontainer Widget's change() Method</h1>
+<a href="#home" data-rel="back">Back</a>
+</div>
+<div role="main" class="ui-content">
+<h2>Room Types</h2>
+<p>
+<ul data-role="listview">
+<li><a href="#"><img src="images/luxury.png">Luxury Room</a></li>
+<li><a href="#"><img src="images/mid-level.png">Mid-Level Room</a></li>
+<li><a href="#"><img src="images/standard.png">Standard Room</a></li>
+</ul>
+</p>
+</div>
+</div>
+</body>
+</html>
+
+

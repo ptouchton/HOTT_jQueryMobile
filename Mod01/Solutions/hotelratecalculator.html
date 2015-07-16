@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Hotel Rate Calculator</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="css/jquery.mobile-1.4.4.min.css" />
+	
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script>
+	/*
+	$(document).on('mobileinit', function(){
+		$.mobile.page.prototype.options.keepNative = 'select, input[type=range], input[type=checkbox]';
+	});
+	*/
+	$(document).on('pagecreate', function(){
+		$('#btnCalculate').on('click', function(){
+
+		var roomrate = $('#select-roomtype').val();
+
+		var nights = $('#slider-nights').val();
+		
+		var discount = $(':radio').filter(':checked').val();
+		
+		var exempt = $('#checkbox-exempt').prop('checked');
+		
+		
+		var tax = 0;
+		var roomcharges = roomrate * nights * (1-discount);
+		
+		if(!exempt)
+		{
+			tax = roomcharges *.12;
+		}
+		
+		var total =Number( roomcharges.toFixed(2)) + Number(tax.toFixed(2));
+
+		$('#textinput-charges').val(roomcharges.toFixed(2));
+		$('#textinput-tax').val(tax.toFixed(2));
+		$('#textinput-total').val(total.toFixed(2));
+		});
+	});
+	</script>
+	<script src="js/jquery.mobile-1.4.4.min.js"></script>
+</head>
+<body>
+
+<div data-role="page">
+
+	<div data-role="header">
+		<h1>Hotel Rate Calculator</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<form>
+
+		<div class="ui-field-contain">
+    		<label for="select-roomtype">Choose room type:</label>
+    		<select name="select-roomtype" id="select-roomtype">
+        		<option value="79">Standard</option>
+        		<option value="99">Mid Level</option>
+        		<option value="119">Luxury</option>
+    		</select>
+		</div>
+		<div class="ui-field-contain">
+    <label for="slider-nights">Choose number of nights:</label>
+    <input type="range" name="slider-nights" id="slider-nights" value="1" min="1" max="10" data-highlight="true">
+</div>
+<div class="ui-field-contain">
+    <fieldset data-role="controlgroup" data-mini="true">
+        <legend>Discount:</legend>
+        <input type="radio" name="radio-discount" id="radio-discount-none" value="0" checked="checked">
+        <label for="radio-discount-none">None</label>
+        <input type="radio" name="radio-discount" id="radio-discount-aaa" value=".1">
+        <label for="radio-discount-aaa">AAA (10%)</label>
+        <input type="radio" name="radio-discount" id="radio-discount-aarp" value=".1">
+        <label for="radio-discount-aarp">AARP (10%)</label>
+        <input type="radio" name="radio-discount" id="radio-discount-govt" value=".25">
+        <label for="radio-discount-govt">Gov't (25%)</label>
+    </fieldset>
+</div>
+		<div class="ui-field-contain">
+    		<label for="checkbox-taxexempt">Tax-exempt?<input type="checkbox" name="checkbox-exempt" id="checkbox-exempt"></label>    		
+    		
+ </div>
+<input type="button" class="ui-btn ui-corner-all" id="btnCalculate" value="Calculate">
+		<div class="ui-field-contain">
+		    <label for="textinput-charges">Room Charges:</label>
+		    <input type="text" name="textinput-charges" id="textinput-charges" readonly="readonly" value="">
+		</div>
+		<div class="ui-field-contain">
+		    <label for="textinput-tax">Tax:</label>
+		    <input type="text" name="textinput-tax" id="textinput-tax" readonly="readonly" value="">
+		</div>
+		<div class="ui-field-contain">
+		    <label for="textinput-total">Total:</label>
+		    <input type="text" name="textinput-total" id="textinput-total" readonly="readonly" value="">
+		</div>
+		</form>
+
+
+	</div><!-- /content -->
+
+	<div data-role="footer" data-position="fixed">
+		<h4>Copyright &copy;2014 HOTT, Inc.</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+
+</body>
+</html>

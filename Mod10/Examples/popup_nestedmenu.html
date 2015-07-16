@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Popup Demo - Nested Menu</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="css/jquery.mobile-1.4.4.min.css" />
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/jquery.mobile-1.4.4.min.js"></script>
+
+
+</head>
+<body>
+
+<div data-role="page">
+
+	<div data-role="header">
+		<h1>Popup Demo - Nested Menu</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+
+		<a href="#popupNested" data-rel="popup" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-bars ui-btn-icon-left ui-btn-b" data-transition="pop">Choose a decade...</a>
+		<div data-role="popup" id="popupNested" data-theme="none" data-position-to="window">
+    	<div data-role="collapsibleset" data-theme="b" data-content-theme="a" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" style="margin:0; width:250px;">
+        	<div data-role="collapsible" data-inset="false">
+        		<h2>60s</h2>
+            	<ul data-role="listview">
+                	<li><a href="#" data-rel="dialog">The Beatles</a></li>
+                	<li><a href="#" data-rel="dialog">Elvis Presley</a></li>
+                	<li><a href="#" data-rel="dialog">The Rolling Stones</a></li>
+                	<li><a href="#" data-rel="dialog">Bob Dylan</a></li>
+            	</ul>
+        	</div><!-- /collapsible -->
+        	<div data-role="collapsible" data-inset="false">
+        		<h2>70s</h2>
+            	<ul data-role="listview">
+                	<li><a href="#" data-rel="dialog">Elton John</a></li>
+                	<li><a href="#" data-rel="dialog">The Rolling Stones</a></li>
+                	<li><a href="#" data-rel="dialog">Pink Floyd</a></li>
+                	<li><a href="#" data-rel="dialog">Abba</a></li>
+            	</ul>
+        	</div><!-- /collapsible -->
+        	<div data-role="collapsible" data-inset="false">
+        		<h2>80s</h2>
+        	    <ul data-role="listview">
+        	        <li><a href="#" data-rel="dialog">Prince</a></li>
+        	        <li><a href="#" data-rel="dialog">Madonna</a></li>
+        	        <li><a href="#" data-rel="dialog">U2</a></li>
+        	        <li><a href="#" data-rel="dialog">Michael Jackson</a></li>
+        	    </ul>
+        	</div><!-- /collapsible -->
+        	<div data-role="collapsible" data-inset="false">
+        		<h2>90s</h2>
+        	    <ul data-role="listview">
+        	        <li><a href="#" data-rel="dialog">Mariah Carey</a></li>
+        	        <li><a href="#" data-rel="dialog">Madonna</a></li>
+        	        <li><a href="#" data-rel="dialog">Celene Dion</a></li>
+        	        <li><a href="#" data-rel="dialog">REM</a></li>
+        	    </ul>
+        	</div><!-- /collapsible -->
+    	</div><!-- /collapsible set -->
+	</div><!-- /popup -->
+
+		
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Copyright &copy;2014 HOTT, Inc.</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+
+</body>
+</html>

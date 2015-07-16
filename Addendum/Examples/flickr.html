@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Flickr Demo</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="css/jquery.mobile-1.4.4.min.css" />
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script>
+	    $(document).on('pagecreate', function() {
+      var $dropdown = $('#ddlTags');
+      var $photos = $('#photos');
+      $dropdown.on('change', function(){
+        $photos.html('');
+        $.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?", 
+          {
+            tags: $dropdown.val(),
+            tagmode: "any",
+            format: "json"
+          },
+          function(data) {
+            $.each(data.items, function(i, item) {
+              var div = $("<div/>");
+              if(i==0){
+                div.addClass('ui-block-a');
+              }
+              else if(i==1){
+                div.addClass('ui-block-b');
+              }
+              else if(i==2){
+                div.addClass('ui-block-c');
+              }
+              else{
+                div.addClass('ui-block-d');
+              }
+              var img = $("<img/>");
+              img.attr("src", item.media.m)
+                 .appendTo(div);
+              div.appendTo("#photos");   
+              if (i == 3){
+                return false;
+              }
+            });
+          }
+        );
+      });
+    });
+
+	</script>
+	<script src="js/jquery.mobile-1.4.4.min.js"></script>
+</head>
+<body>
+
+<div data-role="page">
+
+	<div data-role="header">
+		<h1>Flickr Gallery with jQuery</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		  <div id="container">
+	    <form id="frmPhotos">
+      		<select id="ddlTags">
+        		<option selected>-- Choose a Gallery --</option>
+        		<option value="vermont">Vermont</option>
+        		<option value="newhampshire">New Hampshire</option>
+        		<option value="maine">Maine</option>
+      		</select>
+    	</form>
+    <div id="photos" class="ui-grid-c ui-responsive"></div>
+  </div>
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Copyright &copy;2014 HOTT, Inc.</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+
+</body>
+</html>

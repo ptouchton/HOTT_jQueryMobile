@@ -1,0 +1,9 @@
+<div id="#bear" class="ui-content">
+	<h3>Black Bear</h3>
+	<p><img src="images/blackbear.png" width="200" height="150" alt="Black Bear">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi auctor luctus molestie. Cras ante diam, auctor sit amet facilisis sit amet, consequat in massa. Maecenas libero leo, placerat ut nisl ut, blandit adipiscing lacus. Sed aliquam rutrum urna, ut commodo sapien semper commodo. Aenean posuere, diam sit amet pretium suscipit, ante urna vulputate tortor, in lobortis libero turpis a sapien.</p>
+	<ul>
+		<li><span class="label"><strong>Species Name</strong></span><strong>: </strong>Ursus americanus </li>
+		<li><strong>Diet:</strong> fruits, berries, buds, shoots, nuts</li>
+		<li><strong>Weight: </strong>Males - 126 - 551 lb | Females - 90 - 375 lb</li>
+	</ul>
+</div>

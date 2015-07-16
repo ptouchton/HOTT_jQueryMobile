@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Flipswitch Widget Demo</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="css/jquery.mobile-1.4.4.min.css" />
+	<style>
+		.custom-size-flipswitch.ui-flipswitch .ui-btn.ui-flipswitch-on {
+    		text-indent: -5.9em;
+		}
+		.custom-size-flipswitch.ui-flipswitch .ui-flipswitch-off {
+		    text-indent: 0.5em;
+		}
+		/* Custom widths are needed because the length of custom labels differs from
+		   the length of the standard labels */
+		.custom-size-flipswitch.ui-flipswitch {
+		    width: 8.875em;
+		}
+		.custom-size-flipswitch.ui-flipswitch.ui-flipswitch-active {
+		    padding-left: 7em;
+		    width: 1.875em;
+		}
+		@media (min-width: 28em) {
+		    /*Repeated from rule .ui-flipswitch above*/
+		    .ui-field-contain > label + .custom-size-flipswitch.ui-flipswitch {
+		        width: 1.875em;
+		    }
+		}
+	</style>
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/jquery.mobile-1.4.4.min.js"></script>
+</head>
+<body>
+
+<div data-role="page">
+
+	<div data-role="header">
+		<h1>Flipswitch Widget Demo</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<form>
+			    <label for="flip-select">Select a theme:</label>
+    <select id="flip-select" name="flip-select" data-role="flipswitch" data-wrapper-class="custom-size-flipswitch">
+        <option>Theme A</option>
+        <option>Theme B</option>
+    </select>
+		</form>
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Copyright &copy;2014 HOTT, Inc.</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+
+</body>
+</html>

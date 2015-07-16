@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>Untitled 1</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="css/jquery.mobile-1.4.4.min.css"  rel="stylesheet"  />
+<style>
+#headimage {
+	max-width: 100%;
+	height: auto;
+	border: 4px solid #FFF;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	box-shadow: 0 0 3px 3px #666;
+	-webkit-box-shadow: 0 0 3px 3px #666;
+	text-align: center;
+}
+img {
+	max-width: 100%;
+	height: auto;
+}
+</style>
+<link href="css/themes/custom.css" rel="stylesheet"  />
+<link href="css/jquery.mobile.structure-1.4.4.css" rel="stylesheet" / >
+<script src="js/jquery-1.11.1.min.js"></script>
+<script>
+var weatherloaded = false;
+
+var cities = [];
+
+//add an event handler for the panel's beforeopen event
+$(document).on('pagecreate', function () {
+
+	$('#weatherpanel').on("panelbeforeopen", getWeather);
+	$('#weatherpanel').on("panelclose", function(){
+		$('#templist').empty();
+	});
+});
+
+function convertToFahrenheit(cel) {
+  return cel * (9 / 5) + 32;
+}
+
+function getWeather() {
+  var panel = $('#weatherpanel');
+
+  cities = new Array('Boston', 'Hartford', 'Providence', 'Burlington');
+
+  if (!weatherloaded) {
+  //set the content of the 'msg' paragraph
+    $("#msg", panel).html("<i>Fetching weather - please stand by!</i>");
+  } else {
+  //clear the contents of the 'msg' paragraph
+    $('#msg').empty();
+  }
+  var s = ""
+  var i = 0;
+  for (i in cities) {
+
+    var URL = "http://api.openweathermap.org/data/2.5/weather?q=" + cities[i] + "&callback=test";
+
+    $.get(URL, function (res) {
+    //clear the contents of the 'msg' paragraph
+      $('#msg').empty();
+      var tempC = Math.round(res.main.temp - 273.15);
+      var tempF = Math.round(convertToFahrenheit(tempC));
+	
+	//Set the variable s to contain the content for each list item
+      s = '<li><img style="width:100px" src="http://openweathermap.org/img/w/' + res.weather[0].icon + '.png"><h4>' + res.name + '</h4><p><strong>Current Temp:</strong> ' + tempF + '</p></li>';
+
+	//Append the list items to the listview, and then refresh the listview
+      $('#templist').append(s);
+       $('#templist', panel).listview('refresh');
+	  
+      weatherloaded = true;
+
+    }, "JSONP");
+  }
+ 
+}
+</script>
+<script src="js/jquery.mobile-1.4.4.min.js"></script>
+</head>
+<body>
+<div data-role="page">
+  <div data-role="header" class="ui-content">
+    <h1>Weather</h1>
+    <img src="images/weather.jpg" width="600" height="150" alt="Weather" id="headimage" /> <a href="#weatherpanel" data-icon="location" data-iconpos="notext">Weather</a> </div>
+  <!-- /header -->
+  <div role="main" class="ui-content">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ultrices viverra leo, vel ultricies lectus tincidunt eget. Curabitur sagittis auctor leo. Vivamus sed feugiat massa. Nulla faucibus nulla sed felis ornare semper.</p>
+  </div>
+  <!-- /content -->
+  <div data-role="footer">
+    <h4>Copyright &copy;2014 HOTT, Inc.</h4>
+  </div>
+  <!-- /footer -->
+  <div data-role="panel" id="weatherpanel" data-dismissable="false" data-swipe-close="false">
+    <h4>Current Weather for New England Cities</h4>
+    <p id="msg"></p>
+    <ul data-role="listview" id="templist">
+    </ul>
+    <p> <a data-rel="close" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">Dismiss</a> </p>
+  </div>
+</div>
+<!-- /page -->
+</body>
+</html>

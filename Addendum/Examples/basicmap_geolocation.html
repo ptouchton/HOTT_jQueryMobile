@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Google Maps Demo</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="css/jquery.mobile-1.4.4.min.css" />
+	<style>
+    	html { height: 100% }
+    	body { height: 100%; margin: 0; padding: 0 }
+    	#map_canvas { width: 100% ;  height: 400px;}
+    	#map_canvas img{
+    	  max-width:none;
+    	  max-height:none;
+    	}
+  	</style>
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<!-- LOAD GOOGLE MAPS API -->
+  	<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+  	<!--LOAD jquery-ui-map PLUGIN -->
+    <script type="text/javascript" src="http://jquery-ui-map.googlecode.com/svn/trunk/ui/min/jquery.ui.map.full.min.js"></script>
+
+	<script>
+
+		$(document).on('pagecreate',function(){
+			if(navigator.geolocation){
+				navigator.geolocation.getCurrentPosition(function(position){
+					var	lat = position.coords.latitude;
+					var lon = position.coords.longitude;
+					var yourStartLatLng = new google.maps.LatLng(lat,lon);
+					var $map = $('#map_canvas');
+					$map.gmap({'zoom':15, 'center':yourStartLatLng})
+					 	.on('init', function() {
+							$self = $(this);
+							$self.gmap('addMarker', {'position':yourStartLatLng, 'bounds':false})
+					});
+				});
+  			}
+		});
+  	</script>
+	<script src="js/jquery.mobile-1.4.4.min.js"></script>
+</head>
+<body>
+
+<div data-role="page">
+
+	<div data-role="header">
+		<h1>Google Maps Demo</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<!-- DOM ELEMENT -->	
+    	<div id="map_canvas"></div>
+
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Copyright &copy;2014 HOTT, Inc.</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+
+</body>
+</html>
+

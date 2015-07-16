@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Swipe Event Demos</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="css/jquery.mobile-1.4.4.min.css" />
+	<style>
+	.right {
+		background-color:#FFCCFF;
+		font-weight:bold;
+	}
+	.left{
+		background-color:#00CCFF;
+		font-weight:bold;	
+	}
+}
+	</style>
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script>
+		$(document).on('pagecreate', function(){
+			$(document).on('swipeleft', function(){
+				$('p').removeClass('right').addClass('left').text('Swiped left');
+			});
+			$(document).on('swiperight', function(){
+				$('p').removeClass('left').addClass('right').text('Swiped right');
+			});
+		});
+	</script>
+	<script src="js/jquery.mobile-1.4.4.min.js"></script>
+</head>
+<body>
+
+<div data-role="page">
+
+	<div data-role="header">
+		<h1>Swipe Event Demos</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<p>Swipe to change my background color.</p>
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Copyright &copy;2014 HOTT, Inc.</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+
+</body>
+</html>

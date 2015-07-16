@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Information</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<link rel="stylesheet" href="css/jquery.mobile-1.4.4.min.css" />
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/jquery.mobile-1.4.4.min.js"></script>
+	<script src="js/loadJSON.js"></script>
+
+</head>
+<body>
+
+<!--first page -->
+<div data-role="page" id="info-page">
+    <div data-role="header" data-theme="b">
+         <h1>Album Information</h1>
+
+    </div>
+    <div role="main" class="ui-content">
+        <ul data-role="listview" id="albumlist" data-divider-theme="a" data-inset="true">
+            <li data-role="list-divider" data-theme="b" role="heading">Albums</li>
+        </ul>
+    </div>
+</div>
+<!--second page -->
+<div data-role="page" id="details-page">
+    <div data-role="header" data-theme="b"><a href="#" data-rel="back" data-role="button">Go back</a>
+
+         <h1>Album Details</h1>
+
+    </div>
+    <div role="main" class="ui-content" id="contentDiv"></div>
+</div>
+
+</body>
+</html>

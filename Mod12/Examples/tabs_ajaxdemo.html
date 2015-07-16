@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Tabs - External Pages (Ajax)</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="css/jquery.mobile-1.4.4.min.css" />
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/jquery.mobile-1.4.4.min.js"></script>
+	<script>
+		$(document).on('tabsload', '#myTabs', function(event, ui){
+			console.log(ui.tab.text() + ' loaded');
+			$('[data-role=listview]').listview();
+		});
+	</script>
+</head>
+<body>
+
+<div data-role="page">
+
+	<div data-role="header">
+		<h1>Top selling Artists by Decade</h1>
+				<div data-role="tabs" id="myTabs">
+    				<div data-role="navbar">
+        				<ul>
+        				  <li>
+						  <a href="60sbands.html" data-theme="b">60s</a></li>
+        				  <li>
+						  <a href="70sbands.html" data-theme="b">70s</a></li>
+          				  <li>
+						  <a href="80sbands.html" data-theme="b">80s</a></li>
+        				</ul>
+    				</div>
+    				</div>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Copyright &copy;2014 HOTT, Inc.</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+
+</body>
+</html>
+
+

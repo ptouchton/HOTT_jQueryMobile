@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Simple Calculator</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="css/jquery.mobile-1.4.4.min.css" />
+	<style>
+		.ui-icon-divide:after {
+			background-image: url(css/divide.svg);
+			 background-size: 18px 18px;
+		}
+
+	</style>
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script>
+	$(document).on('pagecreate', function(){
+		var num1, num2;
+		$('.math').click(function(){
+
+			var btn = this.id;
+			num1 = parseFloat($('#txtNum1').val());
+			num2 = parseFloat($('#txtNum2').val());
+			var result = 0;
+			if($.isNumeric(num1) && $.isNumeric(num2)){
+				switch(btn)
+				{
+					case 'btnAdd':
+						result = num1 + num2;
+						break;
+					case 'btnSubtract':
+						result = num1 - num2;
+						break;
+					case 'btnMultiply':
+						result = num1 * num2;
+						break;
+					case 'btnDivide':
+						result = num1 / num2;
+						break;
+	
+				}
+				$('#txtResult').val(result);
+			}
+			else{
+				alert('One of the values entered is not numeric.  Please check and enter the values again!');
+			}
+		});
+	
+	});
+	</script>
+	<script src="js/jquery.mobile-1.4.4.min.js"></script>
+</head>
+<body>
+
+<div data-role="page">
+
+	<div data-role="header">
+		<h1>Simple Calculator</h1>
+		
+
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+	<form class="ui-responsive">
+
+	
+		
+		<div class="ui-field-contain">
+			<label for="txtNum1">First Number</label>
+			<input type="text" id="txtNum1">
+		</div>
+		<div class="ui-field-contain">
+			<label for="txtNum2">Second Number</label>
+			<input type="text" id="txtNum2">
+		</div>
+		<div data-role="navbar">
+    		<ul>
+      			<li><a class="math" id="btnAdd" data-icon="plus" href="#">Add</a></li>
+      			<li><a class="math" id="btnSubtract" data-icon="minus" href="#">Subtract</a></li>
+      			<li><a class="math" id="btnMultiply" data-icon="delete" href="#">Multiply</a></li>
+      			<li><a class="math" id="btnDivide" data-icon="divide" href="#">Divide</a></li>
+    		</ul>
+  		</div>
+		<div class="ui-field-contain">
+			<label for="txtResult">Result</label>
+			<input type="text" id="txtResult" readonly="readonly">
+		</div>
+		</form>
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Copyright &copy;2014 HOTT, Inc.</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+
+</body>
+</html>

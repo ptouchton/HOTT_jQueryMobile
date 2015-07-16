@@ -1,0 +1,27 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<title>jQuery Mobile</title>
+  <link rel="stylesheet" href="css/jquery.mobile-1.4.4.min.css" />
+  <script src="js/jquery-1.11.1.min.js"></script>
+  <script>
+    $(document).on('pagecontainershow', function(){
+       $.mobile.loading('show'); 
+    });
+  </script>
+  <script src="js/jquery.mobile-1.4.4.min.js"></script>
+</head>
+<body>
+  <div data-role="page">
+    <div data-role="header">
+      <h1>Page Header</h1>
+    </div>
+    <div role="main" class="ui-content">
+      <p>This is where page content would go.</p>
+    </div>
+    <div data-role="footer">
+      <h4>Page Footer</h4>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Slideshow in jQuery Mobile</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="css/slideshow.css" rel="stylesheet" />
+<link href="css/jquery.mobile-1.4.4.css" rel="stylesheet" />
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/jquery.blueberry.js"></script>
+<script>
+$(document).on("pagecontainershow", function () {
+    $('#slideshow').blueberry();
+});
+</script>
+<script src="js/jquery.mobile-1.4.4.min.js"></script>
+</head>
+<body>
+<div data-role="page">
+  <div data-role="header">
+    <h1>Slideshow</h1>
+  </div>
+  <!-- /header -->
+  <div role="main" class="ui-content">
+ <div id="slideshow">
+      <ul class="slides">
+        <li><img src="images/slide1.png" /></li>
+        <li><img src="images/slide2.png" /></li>
+        <li><img src="images/slide3.png" /></li>
+      </ul>
+    </div>
+  </div>
+  <!-- /content -->
+  <div data-role="footer">
+    <h4>Copyright &copy;2014 </h4>
+  </div>
+  <!-- /footer --> 
+</div>
+<!-- /page -->
+</body>
+</html>

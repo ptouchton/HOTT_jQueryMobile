@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Hotel Luxury</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="css/jquery.mobile-1.4.4.min.css" />
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/jqm-configuration1.js"></script>
+	<script src="js/jquery.mobile-1.4.4.min.js"></script>
+</head>
+<body>
+
+<div data-role="page" id="pgReserve">
+
+	<div data-role="header" data-add-back-btn="true">
+		<h1>Reserve a Room!</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<form>
+		<div class="ui-field-contain">
+      		<label for="txtFirstName">First Name</label>
+      		<input type="text" id="txtFirstName" />
+      	</div>
+		<div class="ui-field-contain">
+      		<label for="txtLastName">Last Name</label>
+      		<input type="text" id="txtLastName" />
+		</div>      	
+		<div class="ui-field-contain">
+			<label for="txtPhoneNumber">Phone Number</label>
+      		<input type="text" id="txtPhoneNumber" />
+		</div>      
+		<div class="ui-field-contain">
+			<label for="roomSize2">Select a sleeping arrangement:</label>
+      		<select id="slctRoomSize2" name="roomSize2">
+      		  <option value="Single">One Single Bed</option>
+      		  <option value="Double">Two Single Beds</option>
+      		  <option value="Queen">One Queen Bed</option>
+      		  <option value="King">One King Bed</option>
+      		</select>
+    
+		</div>
+    	</form>
+	</div><!-- /content -->
+
+	<div data-role="footer" data-position="fixed">
+		<h4>Copyright &copy;2014 HOTT, Inc.</h4>
+		<div data-role="navbar">
+  		<ul>
+    		<li><a href="pgHome.html">Home</a></li>
+    		<li><a href="pgBrowse.html">Browse Vacancies</a></li>
+    		<li><a href="pgReserve.html">Reserve a Room</a></li>
+    		<li><a href="pgAbout.html">About Hotel Luxury</a></li>
+  		</ul>
+		</div>
+	</div><!-- /footer -->
+</div><!-- /page -->
+
+</body>
+</html>

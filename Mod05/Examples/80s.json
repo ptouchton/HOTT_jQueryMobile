@@ -1,0 +1,65 @@
+﻿[
+{
+"id":1,
+"cd": "Like a Prayer",
+"artist": "Madonna",
+"label":"Sire/London/Rhino",
+"release":"1989"
+},
+{
+"id":2,
+"cd": "The Joshua Tree",
+"artist": "U2",
+"label":"Island",
+"release":"1987"
+},
+{
+"id":3,
+"cd": "Graceland",
+"artist": "Paul Simon",
+"label":"Warner Brothers",
+"release":"1986"
+},
+{
+"id":4,
+"cd": "Master of Puppets ",
+"artist": "Metallica",
+"label":"Elektra/Wea",
+"release":"1986"
+},
+{
+"id":5,
+"cd": "Raising Hell",
+"artist": "Run-DMC",
+"label":"Arista Records/Profile",
+"release":"1986"
+},
+{
+"id":6,
+"cd": "Purple Rain",
+"artist": "Prince",
+"label":"Warner Brothers",
+"release":"1984"
+},
+{
+"id":7,
+"cd": "Stop Making Sense",
+"artist": "Talking Heads",
+"label":"Warner Brothers/Wea",
+"release":"1984"
+},
+{
+"id":8,
+"cd": "Thriller",
+"artist": "Michael Jackson",
+"label":"Sony",
+"release":"1982"
+},
+{
+"id":9,
+"cd": "Back in Black",
+"artist": "AC/DC",
+"label":"Atlantic",
+"release":"1980"
+}
+]

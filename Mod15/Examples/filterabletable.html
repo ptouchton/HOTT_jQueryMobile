@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Creating a Filterable Table</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="css/jquery.mobile-1.4.4.min.css" />
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/jquery.mobile-1.4.4.min.js"></script>
+</head>
+<body>
+
+<div data-role="page">
+
+	<div data-role="header">
+		<h1>Hair Bands of the 80s</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<form class="ui-filterable">
+    <input id="txtSearchTable" type="search">
+</form>
+<table data-role="table" id="album-table" data-filter="true" data-input="#txtSearchTable" class="ui-responsive">
+    <thead>
+        <tr>
+            <th data-priority="1">Rank</th>
+            <th data-priority="persist">Album Title</th>
+            <th data-priority="persist">Band</th>
+            <th data-priority="3">Year</th>            
+        </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>1</th>
+                <td><a href="http://en.wikipedia.org/wiki/Too_Fast_for_Love" data-rel="external">Too Fast for Love</a></td>
+                <td>Motley Crue</td>
+                <td>1981</td>
+            </tr>
+            <tr>
+                <th>2</th>
+                <td><a href="http://en.wikipedia.org/wiki/Van_Halen_(album)" data-rel="external">Van Halen</a></td>
+                <td>Van Halen</td>
+                <td>1978</td>
+            </tr>
+            <tr>
+                <th>3</th>
+                <td><a href="http://en.wikipedia.org/wiki/Pyromania_(album)" data-rel="external">Pyromania</a></td>
+                <td>Def Leppard</td>
+                <td>1983</td>
+            </tr>
+            <tr>
+                <th>4</th>
+                <td><a href="http://en.wikipedia.org/wiki/1984_(Van_Halen_album)" data-rel="external">1984</a></td>
+                <td>Van Halen</td>
+                <td>1983</td>
+            </tr>
+            <tr>
+                <th>5</th>
+                <td><a href="http://en.wikipedia.org/wiki/Slippery_When_Wet" data-rel="external">
+				Slippery When Wet</a></td>
+                <td>Bon Jovi</td>
+                <td>1986</td>
+            </tr>
+            <tr>
+                <th>6</th>
+                <td><a href="http://en.wikipedia.org/wiki/Appetite_for_Destruction" data-rel="external">
+				Appetite for Destruction</a></td>
+                <td>Guns 'n Roses</td>
+                <td>1987</td>
+            </tr>
+            <tr>
+                <th>7</th>
+                <td><a href="http://en.wikipedia.org/wiki/Mechanical_Resonance" data-rel="external">
+				Mechanical Resonance</a></td>
+                <td>Tesla</td>
+                <td>1986</td>
+            </tr>
+            <tr>
+                <th>8</th>
+                <td><a href="http://en.wikipedia.org/wiki/Open_Up_and_Say..._Ahh!" data-rel="external">
+				Open Up and Say Ahh!</a></td>
+                <td>Poison</td>
+                <td>1988</td>
+            </tr>
+            <tr>
+                <th>9</th>
+                <td><a href="http://en.wikipedia.org/wiki/Out_of_the_Cellar">Out of 
+				the Cellar</a></td>
+                <td>Ratt</td>
+                <td>1983</td>
+            </tr>
+            <tr>
+                <th>10</th>
+                <td><a href="http://en.wikipedia.org/wiki/The_Yellow_and_Black_Attack"  data-rel="external">The 
+				Yellow &amp; Black Attack</a></td>
+                <td>Stryper</td>
+                <td>1984</td>
+            </tr>
+        </tbody>
+    </table>
+<span style="font-size:xx-small">The Top Ten Most Influential Hair Metal Albums (according to <a href="www.angelfire.com/80s/hairhole/topten.html">www.angelfire.com/80s/hairhole/topten.html)</a></span>    
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Copyright &copy;2014 HOTT, Inc.</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+
+</body>
+</html>

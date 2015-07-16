@@ -1,0 +1,142 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<title>Multipage Hotel</title>
+  <link rel="stylesheet" href="css/jquery.mobile-1.4.4.min.css" />
+  <script src="js/jquery-1.11.1.min.js"></script>
+  <script src="js/jquery.mobile-1.4.4.min.js"></script>
+</head>
+<body>
+<div data-role="page" id="pgHome">
+
+	<div data-role="header" data-add-back-btn="true">
+		<h1>Hotel Luxury</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<h2>Welcome to Hotel Luxury!</h2>
+    <p>Here at Hotel Luxury, we pride ourselves on excellent service. You can expect helpful staff, first-class rooms, complementary meals, and high-quality concierge service!</p>
+    <p>Check below for vacancies, and enjoy your stay!</p>
+
+	</div><!-- /content -->
+
+	<div data-role="footer" data-position="fixed">
+		<h4>Copyright &copy;2014 HOTT, Inc.</h4>
+		<div data-role="navbar">
+  		<ul>
+    		<li><a href="#pgHome">Home</a></li>
+    		<li><a href="#pgBrowse">Browse Vacancies</a></li>
+    		<li><a href="#pgReserve">Reserve a Room</a></li>
+    		<li><a href="#pgAbout">About Hotel Luxury</a></li>
+  		</ul>
+		</div>
+	</div><!-- /footer -->
+</div><!-- /page -->
+<div data-role="page" id="pgReserve">
+
+	<div data-role="header" data-add-back-btn="true">
+		<h1>Reserve a Room!</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<form>
+		<div class="ui-field-contain">
+      		<label for="txtFirstName">First Name</label>
+      		<input type="text" id="txtFirstName" />
+      	</div>
+		<div class="ui-field-contain">
+      		<label for="txtLastName">Last Name</label>
+      		<input type="text" id="txtLastName" />
+		</div>      	
+		<div class="ui-field-contain">
+			<label for="txtPhoneNumber">Phone Number</label>
+      		<input type="text" id="txtPhoneNumber" />
+		</div>      
+		<div class="ui-field-contain">
+			<label for="roomSize2">Select a sleeping arrangement:</label>
+      		<select id="slctRoomSize2" name="roomSize2">
+      		  <option value="Single">One Single Bed</option>
+      		  <option value="Double">Two Single Beds</option>
+      		  <option value="Queen">One Queen Bed</option>
+      		  <option value="King">One King Bed</option>
+      		</select>
+    
+		</div>
+    	</form>
+	</div><!-- /content -->
+
+	<div data-role="footer" data-position="fixed">
+		<h4>Copyright &copy;2014 HOTT, Inc.</h4>
+		<div data-role="navbar">
+  		<ul>
+    		<li><a href="#pgHome">Home</a></li>
+    		<li><a href="#pgBrowse">Browse Vacancies</a></li>
+    		<li><a href="#pgReserve">Reserve a Room</a></li>
+    		<li><a href="#pgAbout">About Hotel Luxury</a></li>
+  		</ul>
+		</div>
+	</div><!-- /footer -->
+</div><!-- /page -->
+
+<div data-role="page" id="pgBrowse">
+
+	<div data-role="header" data-add-back-btn="true">
+		<h1>Available Rooms</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+	<form>
+<div class="ui-field-contain">
+<label for="roomSize">Select a sleeping arrangement:</label>
+    <select id="slctRoomSize" name="roomSize">
+      <option value="Single">One Single Bed</option>
+      <option value="Double">Two Single Beds</option>
+      <option value="Queen">One Queen Bed</option>
+      <option value="King">One King Bed</option>
+    </select>
+</div>
+    <input id="btnSearchRooms" type="button" data-corners="false" value="Find Rooms">
+    </form>
+	</div><!-- /content -->
+
+	<div data-role="footer" data-position="fixed">
+		<h4>Copyright &copy;2014 HOTT, Inc.</h4>
+		<div data-role="navbar">
+  		<ul>
+    		<li><a href="#pgHome">Home</a></li>
+    		<li><a href="#pgBrowse">Browse Vacancies</a></li>
+    		<li><a href="#pgReserve">Reserve a Room</a></li>
+    		<li><a href="#pgAbout">About Hotel Luxury</a></li>
+  		</ul>
+		</div>
+	</div><!-- /footer -->
+</div><!-- /page -->
+
+<div data-role="page" id="pgAbout">
+
+	<div data-role="header" data-add-back-btn="true">
+		<h1>About Hotel Luxury</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<p>Lorem ipsum dolor …</p>
+		<p>Lorem ipsum dolor …</p>
+		<p>Lorem ipsum dolor …</p>
+	</div><!-- /content -->
+
+	<div data-role="footer" data-position="fixed">
+		<h4>Copyright &copy;2014 HOTT, Inc.</h4>
+		<div data-role="navbar">
+  		<ul>
+    		<li><a href="#pgHome">Home</a></li>
+    		<li><a href="#pgBrowse">Browse Vacancies</a></li>
+    		<li><a href="#pgReserve">Reserve a Room</a></li>
+    		<li><a href="#pgAbout">About Hotel Luxury</a></li>
+  		</ul>
+		</div>
+	</div><!-- /footer -->
+</div><!-- /page -->
+
+</body>
+</html>
+

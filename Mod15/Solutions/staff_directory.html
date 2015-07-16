@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Staff Directory</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="css/jquery.mobile-1.4.4.min.css" />
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/jquery.mobile-1.4.4.min.js"></script>
+</head>
+<body>
+
+<div data-role="page">
+
+	<div data-role="header">
+		<h1>Staff Directory</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<form class="ui-filterable">
+			<input type="search" id="txtStaffSearch">
+		</form>
+		<ul id="staffDirectory" data-role="listview" data-split-icon="phone" data-split-theme="a" data-inset="true" data-filter="true" data-input="#txtStaffSearch" data-filter-reveal="true">
+    		<li>
+    			<a href="#">
+    		    	<img src="images/m_harris.jpg">
+    				<h2>Mike Harris</h2>
+    				<p>Maintenance</p>
+    			</a>
+        		<a href="tel:15555555555">Maintenance</a>
+    		</li>
+    		<li>
+    			<a href="#">
+    		    	<img src="images/b_smith.jpg">
+    				<h2>Ben Smith</h2>
+    				<p>Sales and Catering</p>
+    			</a>
+        		<a href="tel:15555555555">Sales and Catering</a>
+    		</li>
+			<li>
+    			<a href="#">
+    		    	<img src="images/b_willis.jpg">
+    				<h2>Barbara Willis</h2>
+    				<p>Hotel Manager</p>
+    			</a>
+        		<a href="tel:15555555555">Hotel Manager</a>
+    		</li>
+			<li>
+    			<a href="#">
+    		    	<img src="images/c_drake.jpg">
+    				<h2>Carl Drake</h2>
+    				<p>Accounting</p>
+    			</a>
+        		<a href="tel:15555555555">Accounting</a>
+    		</li>
+			<li>
+    			<a href="#">
+    		    	<img src="images/e_addams.jpg">
+    				<h2>Liz Addams</h2>
+    				<p>Front Desk Manager</p>
+    			</a>
+        		<a href="tel:15555555555">Front Desk Manager</a>
+    		</li>
+			<li>
+    			<a href="#">
+    		    	<img src="images/j_winchester.jpg">
+    				<h2>Julie Winchester</h2>
+    				<p>Housekeeping</p>
+    			</a>
+        		<a href="tel:15555555555">Housekeeping</a>
+	   		</li>
+		</ul>
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Copyright &copy;2014 HOTT, Inc.</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+
+</body>
+</html>

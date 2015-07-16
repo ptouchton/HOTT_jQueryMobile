@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Custom Select Menu</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="css/jquery.mobile-1.4.4.min.css" />
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/jquery.mobile-1.4.4.min.js"></script>
+</head>
+<body>
+
+<div data-role="page">
+
+	<div data-role="header">
+		<h1>Custom Select Menu</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<form>
+		<div class="ui-field-contain">
+  <label for="select-state">Select the states you'd like to visit:</label>
+  <select name="select-state" id="select-state"  data-native-menu="false" multiple="multiple">
+				<option>Choose ...</option>
+				<option value="CT">Connecticut</option>
+				<option value="ME">Maine</option>
+				<option value="MA">Massachusetts</option>
+				<option value="NH">New Hampshire</option>
+				<option value="RI">Rhode Island</option>
+				<option value="VT">Vermont</option>
+  </select>
+</div>
+
+		</form>
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Copyright &copy;2014 HOTT, Inc.</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+
+</body>
+</html>

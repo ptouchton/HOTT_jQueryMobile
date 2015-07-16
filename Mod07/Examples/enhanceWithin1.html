@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>enhanceWithin() Method</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="css/jquery.mobile-1.4.4.min.css" />
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script>
+	$(document).on('pagecreate', function(){
+		$.getJSON('getshippers.php', function(result){
+		var s = '<ul data-role="listview" data=inset="true">';
+			$.each(result, function(i, field){
+				s += '<li><a href="#">' + result[i][1] + '</a><a href="#" id="btnShipper' + result[i][0] +'" data-shippernum="' + result[i][0] + '" class="ui-btn ui-btn-icon-notext ui-icon-delete ui-btn-a" title="Delete" ></a></li>';
+      			
+    		});
+    		s += '</ul>';
+    		$("#shippersList").append(s);
+    		
+    	});
+		$('#shippersList').on('click', 'a:jqmData(shippernum)', function(){
+			console.log(this.id);
+			alert('Add code to delete ' + $(this).jqmData('shippernum'));	
+		});
+    
+	});
+	</script>
+	<script src="js/jquery.mobile-1.4.4.min.js"></script>
+</head>
+<body>
+
+<div data-role="page">
+
+	<div data-role="header">
+		<h1>List of Shipping Companies</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<div id="shippersList"></div>
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Copyright &copy;2014 HOTT, Inc.</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+
+</body>
+</html>

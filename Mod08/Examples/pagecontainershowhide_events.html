@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Pagecontainer Show/Hide Events</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="css/jquery.mobile-1.4.4.min.css" />
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script>
+		$(document).on('mobileinit', function() {
+			$(document).on('pagecontainerbeforeshow', 'body', function( event, ui ) {
+				console.log( "pagecontainerbeforeshow triggered: " +
+				ui.prevPage.attr('id') + " is about to be hidden" );
+			} );
+			$(document).on('pagecontainershow', 'body', function( event, ui ) {
+				console.log('pagecontainershow triggered: ' + ui.prevPage.attr('id') + ' is now hidden');
+			} );
+			$(document).on('pagecontainerbeforehide', 'body', function( event, ui ) {
+				console.log('pagecontainerbeforehide triggered: ' +
+				ui.nextPage.attr('id') + ' is about to be shown' );
+			} );
+			$(document).on('pagecontainerhide', 'body', function( event, ui ) {
+				console.log('pagecontainerhide triggered: ' + ui.nextPage.attr('id') + ' is now shown');
+			} );
+		} );
+	</script>
+	<script src="js/jquery.mobile-1.4.4.min.js"></script>
+</head>
+<body>
+
+	<div data-role="page" id="page1">
+		<div data-role="header">
+			<h1>Pagecontainer Show and Hide Events</h1>
+			<div data-role="navbar">
+			<a href="#page1">Page 1</a><a href="#page2">Page 2</a>
+			</div>
+		</div>
+		<div role="main" class="ui-content">
+			<h2>Page 1</h2>
+			<p>This is page 1</p>
+		</div>
+		<div data-role="footer">
+			<h4>Copyright &copy;2014 HOTT, Inc.</h4>
+		</div>
+	</div>
+	<div data-role="page" id="page2">
+		<div data-role="header">
+			<h1>Pagecontainer Show and Hide Events</h1>
+			<div data-role="navbar">
+			<a href="#page1">Page 1</a><a href="#page2">Page 2</a>
+			</div>
+		</div>
+		<div role="main" class="ui-content">
+			<h2>Page 2</h2>
+			<p>This is page 2</p>
+		</div>
+		<div data-role="footer">
+			<h4>Copyright &copy;2014 HOTT, Inc.</h4>
+		</div>
+	</div>
+</body>
+</html>

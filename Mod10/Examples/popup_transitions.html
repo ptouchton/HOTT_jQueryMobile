@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Popup Demo - Transitions</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="css/jquery.mobile-1.4.4.min.css" />
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/jquery.mobile-1.4.4.min.js"></script>
+
+
+</head>
+<body>
+
+<div data-role="page">
+
+	<div data-role="header">
+		<h1>Popup Demo - Transitions</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+<ul data-role="listview">
+<li><a href="#myPopup" data-transition="none" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-rel="popup">No transition</a></li>
+		<li><a href="#myPopup" data-transition="pop" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-rel="popup">Pop</a></li>
+		<li><a href="#myPopup" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-rel="popup">Fade</a></li>
+		<li><a href="#myPopup" data-transition="flip" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-rel="popup">Flip</a></li>
+		<li><a href="#myPopup" data-transition="turn" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-rel="popup">Turn</a></li>
+		<li><a href="#myPopup" data-transition="flow" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-rel="popup">Flow</a></li>
+		<li><a href="#myPopup" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-rel="popup">Slide</a></li>
+		<li><a href="#myPopup" data-transition="slidefade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-rel="popup">Slidefade</a></li>
+		<li><a href="#myPopup" data-transition="slideup" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-rel="popup">Slide up</a></li>
+		<li><a href="#myPopup" data-transition="slidedown" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-rel="popup">Slide down</a></li>
+</ul>
+		<div data-role="popup" id="myPopup" class="ui-content" data-theme="b">
+			<p>Lorem ipsum dolor...</p>
+		</div>
+
+
+
+
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Copyright &copy;2014 HOTT, Inc.</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+
+</body>
+</html>

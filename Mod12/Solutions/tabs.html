@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Animated Tabs</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="css/jquery.mobile-1.4.4.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="css/tabtheme/tabs.css" />
+<link rel="stylesheet" href="css/tabtheme/jquery.mobile.icons.min.css" />
+<link rel="stylesheet" href="css/jquery.mobile.structure-1.4.4.min.css" />
+<link rel="stylesheet" href="css/animate.css" />
+<style>
+.ui-btn {
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+#tabscontainer {
+	border:1px solid #e3e3e3;
+}
+#tabsbg {
+	background: #f0f0f0;
+	background: -moz-linear-gradient(top, #f0f0f0 0%, #cccccc 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f0f0f0), color-stop(100%, #cccccc));
+	background: -webkit-linear-gradient(top, #f0f0f0 0%, #cccccc 100%);
+	background: -o-linear-gradient(top, #f0f0f0 0%, #cccccc 100%);
+	background: linear-gradient(to bottom, #f0f0f0 0%, #cccccc 100%);
+	padding:5px 5px 0 5px;
+	border-radius: 5px;
+}
+#tabscontainer img, video {
+	max-width: 100%;
+	height: auto;
+	border: 0;
+	float:right;
+	border:2px solid #CCC;
+}
+</style>
+<script src="js/jquery-1.11.1.min.js"></script>
+<script>
+  $(document).on("tabsbeforeactivate", "#tabscontainer", function (e, ui) {
+    $(ui.newPanel).addClass('animated fadeInUp').on('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+        $(this).removeClass("animated fadeInUp");
+    });
+});
+</script>
+<script src="js/jquery.mobile-1.4.4.min.js"></script>
+</head>
+<body>
+<div data-role="page">
+  <div data-role="header">
+    <h1>Animated Tabs</h1>
+  </div>
+  <!-- /header -->
+  <div role="main" class="ui-content">
+    <div data-role="tabs" id="tabscontainer">
+      <div data-role="navbar" id="tabsbg">
+        <ul>
+          <li><a href="#squirrel" data-transition="pop">Eastern Gray Squirrel</a></li>
+          <li><a href="#bear">Black Bear</a></li>
+          <li><a href="#moose">Moose</a></li>
+        </ul>
+      </div>
+      <div id="squirrel" class="ui-content">
+        <h3>Eastern Gray Squirrel</h3>
+        <p><img src="images/squirrel.png" width="200" height="150" alt="Squirrel">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi auctor luctus molestie. Cras ante diam, auctor sit amet facilisis sit amet, consequat in massa. Maecenas libero leo, placerat ut nisl ut, blandit adipiscing lacus. Sed aliquam rutrum urna, ut commodo sapien semper commodo. Aenean posuere, diam sit amet pretium suscipit, ante urna vulputate tortor, in lobortis libero turpis a sapien. </p>
+        <ul>
+          <li><span class="label"><strong>Species Name</strong></span><strong>: </strong>Sciurus carolinensis</li>
+          <li><strong>Diet:</strong> bark, buds, berries, seeds, acorns</li>
+          <li><strong>Weight: </strong>14 to 21 oz</li>
+        </ul>
+      </div>
+      <div id="bear" class="ui-content">
+        <h3>Black Bear</h3>
+        <p><img src="images/blackbear.png" width="200" height="150" alt="Black Bear">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi auctor luctus molestie. Cras ante diam, auctor sit amet facilisis sit amet, consequat in massa. Maecenas libero leo, placerat ut nisl ut, blandit adipiscing lacus. Sed aliquam rutrum urna, ut commodo sapien semper commodo. Aenean posuere, diam sit amet pretium suscipit, ante urna vulputate tortor, in lobortis libero turpis a sapien.</p>
+        <ul>
+          <li><span class="label"><strong>Species Name</strong></span><strong>: </strong>Ursus americanus </li>
+          <li><strong>Diet:</strong> fruits, berries, buds, shoots, nuts</li>
+          <li><strong>Weight: </strong>Males - 126 - 551 lb | Females - 90 - 375 lb</li>
+        </ul>
+      </div>
+      <div id="moose" class="ui-content">
+        <h3>Moose</h3>
+        <video id="video1" width="200" controls>
+          <source src="videos/moose.m4v" type="video/mp4" />
+          <source src="videos/moose.ogv" type="video/ogg" />
+          Your browser does not support the video element. </video>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi auctor luctus molestie. Cras ante diam, auctor sit amet facilisis sit amet, consequat in massa. Maecenas libero leo, placerat ut nisl ut, blandit adipiscing lacus. Sed aliquam rutrum urna, ut commodo sapien semper commodo. Aenean posuere, diam sit amet pretium suscipit, ante urna vulputate tortor, in lobortis libero turpis a sapien. Donec eleifend in libero non fringilla. Aliquam dignissim suscipit nulla et venenatis. Nullam scelerisque, sapien sit amet varius tincidunt, nulla metus rhoncus enim, nec hendrerit nulla augue a lectus. In hac habitasse platea dictumst</p>
+        <ul>
+          <li><span class="label"><strong>Species Name</strong></span><strong>: </strong>Alces americanus</li>
+          <li><strong>Diet:</strong>shoots, plants, bark</li>
+          <li><strong>Weight: </strong>Males - 840 - 1,540 lb | Females - 440 - 790 lb</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- /content -->
+  <div data-role="footer">
+    <h4>Copyright &copy;2014 </h4>
+  </div>
+  <!-- /footer --> 
+</div>
+<!-- /page -->
+</body>
+</html>

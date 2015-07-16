@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<entries>
+  <entry CD="Kind of Blue" artist="Miles Davis">
+    <label>Sony</label>
+    <release>1959</release>
+  </entry>
+  <entry CD="Here&#39;s Little Richard" artist="Little Richard">
+    <label>Specialty</label>
+    <release>1957</release>
+  </entry>
+  <entry CD="Songs for Swingin&#39; Lovers" artist="Frank Sinatra">
+    <label>Capitol</label>
+    <release>1955</release>
+  </entry>
+  <entry CD="In the Wee Small Hours" artist="Frank Sinatra">
+    <label>Capitol</label>
+    <release>1954</release>
+  </entry>
+</entries>

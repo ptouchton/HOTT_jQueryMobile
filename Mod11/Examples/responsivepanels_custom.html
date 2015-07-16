@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Responsive Panels - Custom</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="css/jquery.mobile-1.4.4.min.css" />
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/jquery.mobile-1.4.4.min.js"></script>	
+	<style>
+
+    	@media ( min-width: 45em ) {
+      		/* Reflow the page content in wide viewports */
+			.hottPanelBreakpoint .ui-panel-page-content-open.ui-panel-page-content-position-left.ui-panel-page-content-display-push,
+      		.hottPanelBreakpoint .ui-panel-page-content-open.ui-panel-page-content-position-left.ui-panel-page-content-display-reveal,
+      		.hottPanelBreakpoint .ui-panel-fixed-toolbar.ui-panel-page-content-open.ui-panel-page-content-position-left.ui-panel-page-content-display-push,
+      		.hottPanelBreakpoint .ui-panel-fixed-toolbar.ui-panel-page-content-open.ui-panel-page-content-position-left.ui-panel-page-content-display-reveal {
+        		margin-right: 17em;
+      		}
+      		.hottPanelBreakpoint .ui-panel-page-content-open.ui-panel-page-content-position-right.ui-panel-page-content-display-push,
+      		.hottPanelBreakpoint .ui-panel-page-content-open.ui-panel-page-content-position-right.ui-panel-page-content-display-reveal,
+      		.hottPanelBreakpoint .ui-panel-fixed-toolbar.ui-panel-page-content-open.ui-panel-page-content-position-right.ui-panel-page-content-display-push,
+      		.hottPanelBreakpoint .ui-panel-fixed-toolbar.ui-panel-page-content-open.ui-panel-page-content-position-right.ui-panel-page-content-display-reveal {
+      			margin-left: 17em;
+      		}
+      		.hottPanelBreakpoint .ui-panel-page-content-open.ui-panel-page-content-display-push,
+      		.hottPanelBreakpoint .ui-panel-page-content-open.ui-panel-page-content-display-reveal {
+        		width: auto;	
+      		}
+
+      		/* Disable "tap outside to dismiss" in wide viewports */
+
+      		.hottPanelBreakpoint.ui-page-active ~ .ui-panel-dismiss-display-reveal,
+      		.hottPanelBreakpoint.ui-page-active ~ .ui-panel-dismiss-display-push {
+      			 display: none;
+      		}
+
+    	}
+
+  </style>
+
+</head>
+<body>
+
+
+<div data-role="page" id="responsiveCustomPage" class="hottPanelBreakpoint">
+
+    <div data-role="header">
+      <h1>Responsive Panel (custom breakpoint)</h1>
+    </div>
+
+    <div role="main" class="ui-content" style="min-height: 500px;"> 
+      <p><a class="ui-btn" href="#responsiveCustom" data-theme="b">Open Panel</a></p>
+
+      <p>Press the button above to open the panel.&nbsp;&nbsp;Notice how the page content is cut off in viewports below 45 ems wide, but reflows to display all of the content in viewports 45 ems and wider.</p>
+    </div>
+
+    <div data-role="panel" id="responsiveCustom" data-display="reveal">
+      <h2>Responsive Panel (custom breakpoint)</h2>
+      <p>This panel uses a <code>hottPanelBreakpoint</code> class on its page wrapper, along with a custom media query, to create a responsive panel.&nbsp;&nbsp;In viewports below 45 ems wide, the panel behaves as normal.&nbsp;&nbsp;In viewports 45 ems and wider, the page reflows to display all of its content, so that the user can interact with the panel and page at the same time.&nbsp;&nbsp;In addition, the "tap outside to close" functionality is disabled.</p>
+    </div>   
+
+  </div>
+
+  
+</body>
+</html>
+
+  

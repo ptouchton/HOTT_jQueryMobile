@@ -1,0 +1,32 @@
+﻿ <tr>
+        <th class="label">Species Name</th>
+        <td>Sciurus carolinensis</td>
+        <td>Gavia immer</td>
+        <td>Ursus americanus </td>
+        <td>Alces americanus</td>
+      </tr>
+      <tr>
+        <th class="label">Diet</th>
+        <td>bark, buds, berries, seeds, acorns</td>
+        <td>Fish</td>
+        <td>fruits, berries, buds, shoots, nuts</td>
+        <td>shoots, plants, bark</td>
+      </tr>
+      <tr>
+        <th class="label">Size</th>
+        <td>Head - 9.1 to 11.8 in <br>
+          Tail - 7.5 to 9.8 in<br></td>
+        <td>24 to 39 in</td>
+        <td>Head and Body - 47 to 79 in)<br>
+          Shoulder Height - 28 to 41 in</td>
+        <td>4.6–6.9 ft</td>
+      </tr>
+      <tr>
+        <th class="label">Weight (lbs.)</th>
+        <td>14 to 21 oz</td>
+        <td>3.5 to 17.6</td>
+        <td>Adult males - 126–551 lb<br>
+          Adult females - 90–375 lb</td>
+        <td>Males - 840–1,540 lb<br>
+          Females - 440–790 lb</td>
+      </tr>

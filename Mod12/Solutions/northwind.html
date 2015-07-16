@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Northwind Contact Info</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="css/jquery.mobile-1.4.4.min.css" />
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script>
+	$(document).on('pagecontainershow', function(){
+
+	
+		$.getJSON('getemployees.php', function(result){
+
+			var s = '';
+			$.each(result, function(i, field){
+				var name = field[0] + ' ' + field[1];
+				s += '<li><h3>' + name   + '</h3><p>' + field[2] +  '</p><p>' + field[3] + '</p></li>';
+    		});
+    		$("#employeeslist").append(s);
+    	});	
+
+		$.getJSON('getsuppliers.php', function(result){
+
+			var s = '';
+			$.each(result, function(i, field){
+				s += '<li><h3>' + field[0] + '</h3><p>' + field[1] + '</p><p>' + field[2]  + '</p></li>';
+      		});
+    		$("#supplierslist").append(s);
+    		var $supplierslist = $('#supplierslist').listview('refresh');
+    	});	
+
+
+		$.getJSON('getshippers.php', function(result){
+
+			var s = '';
+			$.each(result, function(i, field){
+				s += '<li><h3>' + field[1] + '</h3><p>' + field[2] +  '</p></li>';    			
+    		});
+    		$("#shipperslist").append(s);
+    		var $shipperslist = $('#shipperslist').listview('refresh');
+
+    	});	
+	
+	});
+</script>
+	<script src="js/jquery.mobile-1.4.4.min.js"></script>
+</head>
+<body>
+
+<div data-role="page">
+
+	<div data-role="header">
+		<h1>Northwind Contact Info</h1>
+		
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<div data-role="tabs">
+			<div data-role="navbar">
+				<ul>
+			      <li><a href="#employeestab">Employees</a></li>
+			      <li><a href="#supplierstab">Suppliers</a></li>
+			      <li><a href="#shipperstab">Shippers</a></li>
+			    </ul>
+			</div>
+	
+
+			<div id="employeestab">
+				<h3>Employee Information</h3>
+				<ul data-role="listview" id="employeeslist" data-inset="true">
+				</ul>
+			
+			</div>
+			
+				<div id="supplierstab">
+					<div data-role="collapsible">
+						<h3>Supplier Information</h3>
+						<ul data-role="listview" id="supplierslist" data-inset="true">
+						</ul>
+					</div>
+				</div>
+				
+			<div id="shipperstab">
+				<h3>Shipper Information</h3>
+				<ul data-role="listview" id="shipperslist" data-inset="true">
+				</ul>
+			</div>
+</div>
+		</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Copyright &copy;2014 HOTT, Inc.</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+
+</body>
+</html>

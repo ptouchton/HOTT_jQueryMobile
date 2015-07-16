@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>External Panels</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="css/jquery.mobile-1.4.4.min.css" />
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script>
+		$(function() {
+			$( "body>[data-role='panel']" ).panel();
+		});
+	</script>
+	<script src="js/jquery.mobile-1.4.4.min.js"></script>
+	
+</head>
+<body>
+
+<div data-role="page">
+
+	<div data-role="header">
+		<h1>External Panels</h1>
+		<a href="#" data-rel="back" class="ui-btn ui-btn-left ui-alt-icon ui-nodisc-icon ui-corner-all ui-btn-icon-notext ui-icon-carat-l">Back</a>		
+
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<h1>External Panels - Page 1</h1>
+
+		<p>The two panels are defined outside the page.&nbsp;&nbsp;Panels are typically defined as siblings to the header, footer and content containers <i>within</i> the page.&nbsp;&nbsp;</p>
+		<p>Panels outside of a page must be initialized manually and will not be handled by auto init.&nbsp;&nbsp;Panels outside of pages will remain in the DOM (unless manually removed) as long as you use Ajax navigation, and can be opened or closed from any page.</p>
+
+		<p><a href="externalpanels2.html">Navigate to page 2</a></p>
+
+		
+		<a href="#panel1" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-mini">Display Panel 1</a>
+		<a href="#panel2" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-mini">Display Panel 2</a>
+		
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Copyright &copy;2014 HOTT, Inc.</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+
+	<!-- Panel 1  -->
+	<div data-role="panel" id="panel1" data-position="left" data-display="reveal" data-theme="a">
+
+        <h3>Panel 1</h3>
+        <p>This panel is defined outside of the page.&nbsp;&nbsp;It can be viewed on either page1 or page2.</p>
+        <p>To close, click off the panel, swipe left or right, hit the Esc key, or use the button below:</p>
+        <a href="#" data-rel="close" class="ui-btn ui-shadow ui-corner-all ui-btn-a ui-icon-delete ui-btn-icon-left ui-btn-inline">Close panel</a> 
+
+	</div>
+
+	<!-- Panel 2  -->
+	<div data-role="panel" id="panel2" data-position="right" data-display="push" data-theme="b">
+
+        <h3 class="ui-bar-b">Panel 2</h3>
+        <p>This panel is defined outside of the page.&nbsp;&nbsp;It can be viewed on either page 1 or page 2.</p>
+        <p>To close, click off the panel, swipe left or right, hit the Esc key, or use the button below:</p>
+        <a href="#" data-rel="close" class="ui-btn ui-shadow ui-corner-all ui-btn-a ui-icon-delete ui-btn-icon-left ui-btn-inline">Close panel</a> 
+
+	</div>
+
+</body>
+</html>
+
+
+
+

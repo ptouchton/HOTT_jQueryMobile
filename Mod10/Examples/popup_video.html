@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Popup Demo - Video</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="css/jquery.mobile-1.4.4.min.css" />
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/jquery.mobile-1.4.4.min.js"></script>
+	<style>
+	
+    iframe {
+   		border: none;
+	}
+	</style>
+	<script>
+		var $vidFrame;
+		$(document).on( "pagecreate", function() {
+    		$vidFrame = $('#popupVideo iframe');
+    		$vidFrame.attr('width', 0).attr('height', 0);
+ 
+    		$( "#popupVideo" ).on({
+        		popupbeforeposition: function() {
+            		var size = scale( 497, 298, 15, 1 ),
+                		w = size.width,
+                		h = size.height;
+ 
+            		$vidFrame.attr('width',w).attr('height',h);
+        		},
+       			popupafterclose: function() {
+            		$vidFrame.attr('width', 0).attr('height', 0);
+		    	}
+    		});
+		});
+	
+		function scale( width, height, padding, border ) {
+    		var scrWidth = $(window).width() - 30;
+        	var scrHeight = $(window).height() - 30;
+        	var ifrPadding = 2 * padding;
+        	var ifrBorder = 2 * border;
+        	var ifrWidth = width + ifrPadding + ifrBorder;
+        	var ifrHeight = height + ifrPadding + ifrBorder;
+        	var w, h;
+ 
+    		if ( ifrWidth < scrWidth && ifrHeight < scrHeight ) {
+        		w = ifrWidth;
+        		h = ifrHeight;
+    		}
+    		else if ( ( ifrWidth / scrWidth ) > ( ifrHeight / scrHeight ) ) {
+        		w = scrWidth;
+        		h = ( scrWidth / ifrWidth ) * ifrHeight;
+    		} 
+    		else {
+        		h = scrHeight;
+        		w = ( scrHeight / ifrHeight ) * ifrWidth;
+    		}
+ 
+    		return {
+        		'width': w - ( ifrPadding + ifrBorder ),
+        		'height': h - ( ifrPadding + ifrBorder )
+    		};
+		};
+			</script>
+
+</head>
+<body>
+
+<div data-role="page">
+
+	<div data-role="header">
+		<h1>Popup Demo - Video</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<a href="#popupVideo" data-rel="popup" data-position-to="window" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">Launch video player</a>
+
+		<div data-role="popup" id="popupVideo" data-overlay-theme="b" data-theme="a" data-tolerance="15,15" class="ui-content">
+    		<iframe src="http://player.vimeo.com/video/48398019?portrait=0" width="497" height="298"></iframe>
+		</div>
+
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Copyright &copy;2014 HOTT, Inc.</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+
+</body>
+</html>

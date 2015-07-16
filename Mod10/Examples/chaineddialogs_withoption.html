@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Chained Dialogs</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="css/jquery.mobile-1.4.4.min.css" />
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script>
+
+		$(document).on("mobileinit", function() {
+			$.mobile.page.prototype.options.closeBtn = "right";
+		});
+
+	</script>
+	<script src="js/jquery.mobile-1.4.4.min.js"></script>
+</head>
+<body>
+
+<div data-role="page" id="homePage">
+
+	<div data-role="header">
+		<h1>Home Page</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<p><a href="#aboutDialog" data-transition="pop">About This App</a></p>
+		<p><a href="#deleteDialog" data-transition="slidedown">Delete Contact</a></p>
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Copyright &copy;2014 HOTT, Inc.</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+
+<div data-role="page" data-dialog="true" id="aboutDialog">
+  <div data-role="header" data-theme="b">
+    <h1>About This App</h1>
+  </div>
+  <div role="main" class="ui-content">
+    <p style="text-align: center;">This is a demonstration of Chained Dialogs</p>
+    <p><a href="#homePage" class="ui-btn" data-rel="back">OK</a></p>
+  </div>
+</div>
+
+<div data-role="page" data-dialog="true" id="deleteDialog">
+  <div data-role="header" data-theme="b">
+    <h1>Delete Contact</h1>
+  </div>
+  <div role="main" class="ui-content">
+    <h1 style="text-align: center;">Delete Contact</h1>
+    <p style="text-align: center;">Are you sure?</p>
+    <p><a href="#deletedDialog" class="ui-btn" datatransition="slidedown">Delete Contact</a></p>
+    <p><a href="#homePage" class="ui-btn" data-rel="back">Cancel</a></p>
+  </div>
+</div>
+
+<div data-role="page" data-dialog="true" id="deletedDialog">
+  <div data-role="header" data-theme="b">
+    <h1>Contact Deleted</h1>
+  </div>
+  <div role="main" class="ui-content">
+    <h1 style="text-align: center;">Contact Deleted</h1>
+    <p style="text-align: center;">The contact has been deleted.</p>
+    <p><a href="#homePage" class="ui-btn" data-rel="back">OK</a></p>
+  </div>
+</div>
+
+
+</body>
+</html>
+
+
